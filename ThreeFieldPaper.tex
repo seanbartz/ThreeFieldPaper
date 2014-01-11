@@ -1,5 +1,11 @@
 \documentstyle[epsfig,12pt]{article}
 
+\topmargin -.8cm
+\oddsidemargin  10.5pt
+\evensidemargin  10.5pt
+\textheight  612pt
+\textwidth  432pt
+
 \newcommand{\be}{\begin{equation}}
 \newcommand{\ee}{\end{equation}}
 \newcommand{\ba}{\begin{eqnarray}}
@@ -56,12 +62,28 @@ In this paper, we review previous attempts to find a suitable potential for the 
 
 \section{Review and Motivation}
 
-Review the models of Springer/Kapusta and Gherghetta/Batell, and note the phenomenological shortcomings
+Previous work showed how to construct a potential for a gravity-dilaton-chiral system, assuming that the fields have power-law behavior, which is accurate in both the UV and IR limits. One of the equations of motion is independent of the choice of potential,
+\be
+\chidot^2  = \frac{\rt6}{z^2} \Dz(z^2\phidot). 
+\label{twofield}
+\ee
+Examining the IR limit, we know that the dilaton should have quadratic behavior, $\phi(z)=\lambda z^2$. Inserting this into \label{twofield}, we find that the chiral field behaves as
+\be
+\chi(z)=6^{3/4}\sqrt{\lambda}z,
+\ee
+which removes one of the independent parameters of the original GKK model. As shown in that paper, the IR coefficient of the chiral field sets the large-$n$ mass splitting between the axial-vector and vector mesons in the model. Using the phenomenological value of $\lambda$, which determines the slope of the Regge trajectories, we find a mass splitting that is much too large.
+
+Because this problem arises in the equation that does not involve the potential, this issue cannot be resolved by the choice of potential in the two-field model. Models that derive the field behavior using the superpotential method suffer from the same problem.
+
+To resolve this problem, we suggest to add an additional scalar field to the model, $G$, representing the glueball condensate. This field must be linear in the IR for linear confinement, and go as $z^4$ in the UV to match the operator dimension in the AdS/CFT dictionary.
 
 \section{Setup}
+Consider the action in the string frame for three fields: $\phi$, $\chi$ and $G$ representing the dilaton, a chiral field, and a glueball field with zero mass
+\be
+S_{string}=\frac{1}{16\pi G_5} \int d^5x \root e^{-2\Phi} \left(R_s\partial_\mu\Phi\partial^\mu\Phi - \thalf\partial_\mu\chi\partial^\mu\chi - \thalf\partial_\mu G \partial^\mu G -e^{-4\Phi/3}V(\phi,\chi,G)\right)
+\ee
 
-
-Consider a potential for three fields: $\phi$, $\chi$ and $G$ representing the dilaton, a chiral field, and a glueball field with zero mass.  The potential in the Einstein frame, where the action has its canonical form, is
+The potential in the Einstein frame, where the action has its canonical form, is
 \be
 V(\phi,\chi,G) = {\rm e}^{2\phi/\rt6} \, \tilde{V}(\phi,\chi,G)
 \ee
