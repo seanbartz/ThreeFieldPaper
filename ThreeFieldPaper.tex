@@ -85,7 +85,7 @@ S_{string}=\frac{1}{16\pi G_5} \int d^5x \root e^{-2\Phi} \left(R_s\partial_\mu\
 
 The potential in the Einstein frame, where the action has its canonical form, is
 \be
-V(\phi,\chi,G) = {\rm e}^{2\phi/\rt6} \, \tilde{V}(\phi,\chi,G)
+V(\phi,\chi,G) = {\rm e}^{2\phi/\rt6} \, \tilde{V}(\phi,\chi,G) \label{transform}
 \ee
 with
 \be
@@ -100,25 +100,167 @@ The equations of motion can be written as
 \label{C}
 \ee
 \be
-\thalf \rt6 z^2 \phiddot - \tthalf (z\phidot)^2 - 3 \rt6 z\phidot 
+\tilde{U}=\thalf \rt6 z^2 \phiddot - \tthalf (z\phidot)^2 - 3 \rt6 z\phidot 
 -4\sqrt{6}\phi - a_0\phi^2 +\tthalf\chi^2
-=  \tilde{U}
 \label{U}
 \ee
 \be
-3z\phidot - 2a_0\phi = \frac{\partial \tilde{U}}{\partial \phi}
+ \frac{\partial \tilde{U}}{\partial \phi}=3z\phidot - 2a_0\phi
 \label{phi}
 \ee
 \be
-z^2\chiddot -3z\chidot \left(1+\frac{z\phidot}{\rt6} \right) + 3\chi
-= \frac{\partial \tilde{U}}{\partial \chi}
+ \frac{\partial \tilde{U}}{\partial \chi}
+=z^2\chiddot -3z\chidot \left(1+\frac{z\phidot}{\rt6} \right) + 3\chi
 \label{chi}
 \ee
 \be
+ \frac{\partial \tilde{U}}{\partial G}=
 z^2\Gddot -3z\Gdot \left(1+\frac{z\phidot}{\rt6} \right)
-= \frac{\partial \tilde{U}}{\partial G}
 \label{G}
 \ee
+We assume that the potential has no explicit dependence on the coordinate $z$,  so the equations \ref{phi}-\ref{G} are not independent, and we can eliminate one. 
+
+\subsection{IR Limit}
+The requirement of linear confinement requires a solution in the large $z$ limit of the  form
+\ba
+\phi &=& \lambda z^2 \\
+\chi &=& Az \\
+G &=& B z.
+\label{Lz}
+\ea
+Substitution into (\ref{C}) gives
+\be
+A^2 + B^2 = 6\rt6 \lambda
+\label{Clarge}
+\ee
+The $\lambda$ is fixed by the slope of the linear trajectory and $A$ is fixed by the axial-vector -- vector mass difference.  It is useful to write these as
+\bd
+A = 6^{3/4} \sqrt{\lambda} \cos\theta
+\ed
+\be
+B = 6^{3/4} \sqrt{\lambda} \sin\theta,
+\ee
+where $\theta$ now becomes the parameter controlling the axial-vector -- vector mass splitting. Inserting (\ref{Lz}) into (\ref{U}-\ref{G}) suggests the following terms in our ansatz for the potential
+\be
+\tilde{U} =  a_1 \phi \chi^2 + a_2 \phi G^2 + a_3 \chi^4 + a_4 G^4 + a_5 \chi^2 G^2 
++ a_6 G^2 \tanh(g\phi).
+\ee
+We see that there must be a $G^2$ term in the IR limit, but this is forbidden in the weak-field limit because the glueball condensate field is massless. To circumvent this, we propose the term $G^2 \tanh(g\phi)$ with $g>0$.  In the weak field limit this goes to $g\phi G^2$, which is acceptable.  The $\tanh$ is suggested by (\ref{transform}), and it suggests a rapid exponential transition from the weak field to the strong field limits that is supported by phenomenology.
+By substitution one finds the following constraints on the parameters:
+\bd
+\tilde{U} \rightarrow 6 + a_0 + 6\rt6 \left( \cos^2 \theta \, a_1 + \sin^2 \theta \, a_2 \right)
+\ed
+\be
++ 6^3 \left( \cos^4 \theta \, a_3 + \sin^4 \theta \, a_4 + \cos^2 \theta \sin^2 \theta \, a_5 \right) = 0
+\ee
+\be
+\frac{\partial \tilde{U}}{\partial \chi} \rightarrow
+2a_1 + 24\rt6 \cos^2\theta \, a_3 + 12\rt6 \sin^2\theta \, a_5 + \rt6 = 0
+\ee
+\be
+\frac{\partial \tilde{U}}{\partial G} \rightarrow
+2a_2 + 24\rt6 \sin^2\theta \, a_4 + 12\rt6 \cos^2\theta \, a_5 + \rt6 = 0
+\ee
+\be
+\frac{\partial \tilde{U}}{\partial G} \rightarrow
+a_6 = - \tthalf \label{LargeZ2}
+\ee
+We have chosen to exclude (\ref{phi}) because it is not independent. The parameter $a_6$ is determined, and the others will be determined by an examination of the UV limit.
+
+\subsection{UV Limit}
+Next we look for a solution in the small $z$ limit. The AdS/CFT dictionary dictates that the leading-order UV behavior of the chiral and glueball condensate fields is determined by their dimension. Note also that we are working in the chiral limit where the quark mass is zero. We start by examining only the leading-order terms
+\ba
+\chi &=& \Sigma_0 z^3 \\
+G &=& G_0 z^4.
+\ea
+Substitution into (\ref{C}) and imposing the boundary condition $\phi(0)=0$ gives
+\be
+\phi = \frac{\rt6}{28} \Sigma_0^2 z^6 + \frac{\rt6}{27} G_0^2 z^8
+\label{Sz}
+\ee
+Using only this leading-order behavior in (\ref{U}-\ref{G}), the system of equations is inconsistent, as there are more equations from matching powers of $z$ than unknown parameters. 
+
+To solve this problem, try adding a term $\Sigma_n z^n$ to $\chi$.  Substituting into (\ref{C}) and keeping only the lowest-order cross-term we find the additional term in $\phi$
+\be
+\Delta \phi = \frac{\rt6 n \Sigma_0 \Sigma_n}{(n+4)(n+3)} z^{n+3}
+\ee
+From (\ref{U}) we find that
+\be
+\tilde{U} = -\tthalf (z\phidot)^2 - a_0\phi^2 +3 \frac{n^3 -13n +12}{(n+4)(n+3)} \Sigma_0 \Sigma_n z^{n+3}
+\ee
+Since the $\phi^2$ terms start out as $z^{12}$, $z^{14}$, $z^{16}$, and so do the terms in the potential, the $n$ can only take the values 9, 11, etc.  This term contributes only to the equation for $\partial \tilde{U}/\partial \chi$.
+\be
+\frac{\partial \tilde{U}}{\partial \chi} = -9\Sigma_0 \left( \frac{3}{14} \Sigma_0^2 + \frac{8}{27} G_0^2 z^2 \right) z^9 + (n-3)(n-1) \Sigma_n z^n
+\ee
+By power counting both $n=9$ and $n=11$ can contribute.  
+
+There could also be higher order terms in $G$ such as $G_m z^m$.  This leads to the additional term in $\phi$
+\be
+\Delta \phi = \frac{8 m G_0 G_m}{\rt6 (m+5)(m+4)} z^{m+4}
+\ee
+It contributes to the equation for $\partial \tilde{U}/\partial G$ as
+\be
+\frac{\partial \tilde{U}}{\partial G} = -12G_0 \left( \frac{3}{14} \Sigma_0^2 + \frac{8}{27} G_0^2 z^2 \right) z^{10}
++ m (m-4) G_n z^m
+\ee
+The choice $m=8$ is not possible as there is no term of the same order to balance it.  Terms with $m=10$ and $m=12$ are possible.  These new terms cannot affect the equation for $\partial \tilde{U}/\partial \phi$  nor can they contribute to the equation for $\partial \tilde{U}/\partial \chi$.  Considering higher order terms in both $\chi$ and $G$ leads to
+\be
+\tilde{U} = -\tthalf (z\phidot)^2 - a_0\phi^2 +3 \frac{n^3 -13n +12}{(n+4)(n+3)} \Sigma_0 \Sigma_n z^{n+3}
++ \frac{4m(m-4)}{m+4} G_0 G_m z^{m+4}
+\ee 
+
+The appearance of these terms can be understood by writing the following schematic expansions.
+\bd
+\chi \sim \Sigma_0 z^3 + \Sigma_0^3 z^9 + G_0^2 \Sigma_0 z^{11} + \cdot\cdot\cdot
+\ed
+\bd
+G \sim G_0 z^4 + \Sigma_0^2 G_0 z^{10} + G_0^3 z^{12} + \cdot\cdot\cdot
+\ed
+That is, $\chi$ is an odd function of $\Sigma_0$ and $G$ is an odd function of $G_0$.  These are the symmetries in the equations of motion.  They also follow the spirit of the AdS/CFT correspondence in terms of the dimensionality of the operators and the powers of $z$.
+
+Including now $m$ = 10 and 12, and $n$ = 9 and 11, we have the following set of equations in the small $z$ limit:
+\ba
+\tilde{U}_{\rm LHS} &=& 3 \Sigma_0^4 z^{12} \left[ 4 \frac{\Sigma_9}{\Sigma_0^3} - \frac{(54+a_0)}{2^3 \cdot 7^2} \right] \nonumber \\
+&+& \frac{1}{7} \Sigma_0^2 G_0^2 z^{14} \left[ 120 \frac{G_{10}}{\Sigma_0^2 G_0} + 120 \frac{\Sigma_{11}}{\Sigma_0 G_0^2} - \frac{(72+a_0)}{9} \right] \nonumber \\
+&+& 2G_0^4 z^{16} \left[ 12 \frac{G_{12}}{G_0^3} - \frac{(96+a_0)}{3^5} \right]
+\ea
+\ba
+\tilde{U}_{\rm RHS} &=& \Sigma_0^4 z^{12} \left[  \frac{\rt6}{28} a_1 + a_3\right] \nonumber \\
+&+& \Sigma_0^2 G_0^2 z^{14} \left[ \frac{\rt6}{27} a_1 + \frac{\rt6}{28} (a_2 + g a_6) + a_5 \right] \nonumber \\
+&+& G_0^4 z^{16} \left[ \frac{\rt6}{27} (a_2 + g a_6) + a_4 \right]
+\ea
+%\be
+%\left(\frac{\partial \tilde{U}}{\partial \phi}\right)_{\rm LHS} = \frac{\rt6}{14} (9-a_0) \Sigma_0^2 z^6 + \frac{2\rt6}{27} (12-a_0) G_0^2 z^8 + {\cal O}(z^{12})
+%\ee
+%\be
+%\left(\frac{\partial \tilde{U}}{\partial \phi}\right)_{\rm RHS} = a_1 \Sigma_0^2 z^6 + (a_2 + g a_6) G_0^2 z^8 + {\cal O}(z^{12})
+%\ee
+\ba
+\left(\frac{\partial \tilde{U}}{\partial \chi}\right)_{\rm LHS} &=& 3 \Sigma_0^3 z^9 \left[ -\frac{9}{14} + 16 \frac{\Sigma_9}{\Sigma_0^3} \right]+ 8 \Sigma_0 G_0^2 z^{11} \left[ - \frac{1}{3} + 10 \frac{\Sigma_{11}}{\Sigma_0 G_0^2} \right]\\
+\left(\frac{\partial \tilde{U}}{\partial \chi}\right)_{\rm RHS} &=& \Sigma_0^3 z^9 \left[ \frac{\rt6}{14} a_1 + 4 a_3  \right]+ \Sigma_0 G_0^2 z^{11} \left[  \frac{2\rt6}{27} a_1 + 2 a_5 \right]\\
+\ea
+\ba
+\left(\frac{\partial \tilde{U}}{\partial G}\right)_{\rm LHS} &=& 6 \Sigma_0^2 G_0 z^{10} \left[ -\frac{3}{7} + 10 \frac{G_{10}}{\Sigma_0^2 G_0} \right]
++ 32 G_0^3 z^{12} \left[ - \frac{1}{9} + 3 \frac{G_{12}}{G_0^3} \right] \\
+\left(\frac{\partial \tilde{U}}{\partial G}\right)_{\rm RHS} &=& \Sigma_0^2 G_0 z^{10} \left[ \frac{\rt6}{14} (a_2 + g a_6) + 2a_5 \right]
++ G_0^3 z^{12} \left[ \frac{2\rt6}{27}  (a_2 + g a_6) + 4a_4 \right]
+\ee
+
+Altogether, from both the UV and IR limits, there are ten independent equations for the twelve parameters $a_0 - a_6$, $\Sigma_9$, $\Sigma_{11}$, $G_{10}$, $G_{12}$, and $g$.  We take $g$ as the free parameter to use as the rate of transition from small $z$ to large $z$.  The parameters in the potential are found to be
+\ba
+a_0 &=&  \frac{3}{2} \frac{1}{6 + \sin^2 \theta}\left[ 120 + 62 \sin^2 \theta + 63 \rt6 g \sin^2 \theta \right] \\
+a_1 &=&  -\frac{3\rt6}{4} \frac{1}{6 + \sin^2 \theta}\left[ 12 + 8 \sin^2 \theta + 9 \rt6 g \sin^2 \theta \right] \\
+a_2 &=&  -\frac{\rt6}{4} \frac{1}{6 + \sin^2 \theta}\left[ 32 + 24 \sin^2 \theta + 3 \rt6 g(9 \sin^2 \theta - 2) \right]
+\ea
+\ba
+2 a_3 \cos^2 \theta + a_5 \sin^2 \theta&=&\frac{1}{24} \frac{1}{6 + \sin^2 \theta}\left[ 24 + 22 \sin^2 \theta + 27 \rt6 g \sin^2 \theta \right] \\
+2 a_4 \sin^2 \theta + a_5 \cos^2 \theta&=&\frac{1}{24} \frac{1}{6 + \sin^2 \theta}\left[ 20 +22 \sin^2 \theta + 3 \rt6 g (9 \sin^2 \theta -2 ) \right]\\
+a_6&=&-\frac{3}{2}
+\ea
+The coefficients $a_0$, $a_1$, $a_2$ and $a_6$ are determined, while there are two equations for the three coefficients $a_3$, $a_4$ and $a_5$.  That leaves $a_5$ as a free parameter, to be fit numerically, along with $g$, $\theta$, $G_0$, $\Sigma$, and $\lambda$.
+
+
+
 
 
 \end{document}
