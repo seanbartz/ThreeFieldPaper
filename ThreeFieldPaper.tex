@@ -38,8 +38,11 @@
 \raggedbottom %for right-justified text, remove \raggedright
 
 \title{{\bf A Potential for a Three-Field AdS/QCD Model}}
-\author{Sean P. Bartz and Joseph I. Kapusta}
+\author{Sean P. Bartz\footnote{E-mail: bartz@physics.umn.edu} {\small and} Joseph I. Kapusta\footnote{E-mail:kapusta@physics.umn.edu}}
 
+
+
+\vspace{.3cm}
 \date{\today}
 
 \parindent=20pt
@@ -49,6 +52,7 @@
 \maketitle
 
 \abstract{The Anti-de Sitter Space/Conformal Field Theory (AdS/CFT) correspondence may offer new and useful insights into the non-perturbative regime of strongly coupled gauge theories such as Quantum Chromodynamics (QCD). We present an AdS/CFT-inspired model that describes the spectra of light mesons. The conformal symmetry is broken by a background dilaton field, and chiral symmetry breaking and linear confinement are described by a chiral condensate field. These background fields, along with a background glueball condensate field, are derived from a potential. We describe the construction of the potential, and the calculation of the meson spectra, which match experimental data well. We also argue that the presence of the third background field is necessary to properly describe the meson spectra. The outlook for application of this model to finite temperature systems is also discussed. }
+\vfill
 
 \section{Introduction}
 
@@ -273,7 +277,7 @@ The IR boundary is chosen to be sufficiently large to capture the infrared behav
 \be
 \Delta \phi(z) = c_1 + c_2 z^{-1}.
 \ee
-Symbolically, these terms can be set to zero by enforcing the Dirichlet boundary condition $\phi(0)=0$, but this is impossible to enforce numerically. Creative choice of UV boundary conditions can eliminate one, but not both of these unwanted terms without affecting the chiral and glueball fields. The behavior of the numerical solutions suggests that the desired UV behavior is an unstable solution to the equations.
+Symbolically, these terms can be set to zero by enforcing the Dirichlet boundary condition $\phi(0)=0$, but this is impossible to enforce numerically. Creative choice of UV boundary conditions can eliminate one, but not both of these unwanted terms without affecting the chiral and glueball fields. The behavior of the numerical solutions suggests that the desired UV behavior is an unstable solution to the equations, and therefore difficult or impossible to find with this iterative method.
 
 As an alternative to direct solution, we parameterize the fields as follows:
 \be
@@ -282,15 +286,16 @@ As an alternative to direct solution, we parameterize the fields as follows:
 where $f(z)$ is some function that transitions smoothly from 1 at small values of $z$ to 0 at large $z$, and $\psi(z)_{xx}$ represents the known UV and IR limits of the fields $\phi, \chi,$ and $G$. The switching functions $f$ need not be the same for each field. We choose 
 \ba
 f_\phi(z)&=&e^{-(\beta_1z)^{10}}\\
-f_\chi(z)&=&exp\left(-(\beta_2z)^4\right)\\
-f_G(z)&=&exp\left(-(\beta_3z)^5\right).
+f_\chi(z)&=&e^{-(\beta_2z)^4}\\
+f_G(z)&=&e^{-(\beta_3z)^5}.
 \ea
 The powers of the exponential are chosen to be greater than the known power-law behavior of the fields in the UV limit, so as to not interfere with this behavior. The $\beta_i$ will be set by numerical fitting.
 
 In all, we have nine parameters to be set numerically. The first constraint is to obtain the best global visual fit to the meson spectrum. We do not simply do a chi-squared fitting to the experimental data because the measurement error for the ground state $\rho$ meson is so much smaller than for the others that this would effectively act as the only constraint. Secondly, we seek to minimize the error in the finite-difference approximations to equations $\ref{C}, \ref{chi},$ and $\ref{G}$. 
 
-Three of the parameters are most phenomenologically relevant: $\lambda,$ which controls the slope of the meson spectra in the large-$n$ limit; $\theta,$ which controls the mass splitting between the $a_1$ and $\rho$ mesons, and $\beta_2$, which controls the location of the ``bend" in the $a_1$ spectrum. For each set of these parameters, the other parameters are set by a routine that minimizes the error in the equations of motion. The parameters found are shown below.
+Three of the parameters are most phenomenologically relevant: $\lambda,$ which controls the slope of the meson spectra in the large-$n$ limit; $\theta,$ which controls the mass splitting between the $a_1$ and $\rho$ mesons, and $\beta_2$, which controls the location of the ``bend" in the $a_1$ spectrum. For each set of these parameters, the other parameters are set by a routine that minimizes the error in the equations of motion. The parameters found are shown in Table \ref{tabParam}.
 
+\begin{table}
 \begin{center}
 \begin{tabular}{| l | c || c | r | }
 \hline
@@ -301,15 +306,19 @@ Three of the parameters are most phenomenologically relevant: $\lambda,$ which c
   $g $& 1.0 & & \\
   \hline
 \end{tabular}
+\caption{Best fit parameters}
+\label{tabParam}
 \end{center}
+\end{table}
 
 
 We now analyze the ``extra" term in the potential, $\Delta \tilde{U}$. This term can be approximated numerically as the sum of two Gaussians of the dilaton, 
 \be
 \Delta \tilde{U}\left(\phi\right) = \alpha_1 e^{-\left(\left(\phi-b_1\right)/c_1\right)^2} + \alpha_2 e^{-\left(\left(\phi-b_2\right)/c_2\right)^2}.
 \ee
-The best-fit values for these parameters are shown below.
+The best-fit values for these parameters are shown in Table \ref{tabGauss}.
 
+\begin{table}
 \begin{center}
 \begin{tabular}{| l | c || c | r | }
 \hline
@@ -318,9 +327,14 @@ b_1 & 0.9967 & b_2 & 1.408 \\
 c_1 & 0.5931 & c_2 & 0.7019 \\
   \hline
 \end{tabular}
+\label{tabGauss}
+\caption{The parameters for the fitting to $\Delta \tilde{U}$}
 \end{center}
+\end{table}
 
 \section{Meson Spectra}
+
+We use the meson action and equations of motion found in the paper by Gherghetta, Kapusta, and Kelley. This model finds a better phenomenological fit than the results presented in that paper, particularly for the ground state $\rho$ meson. The scalar mesons are expected to mix with the scalar glueball field of this model, and this analysis is not performed here. 
 
 \begin{figure}
 \caption{$a_1$ spectrum.}
@@ -333,14 +347,13 @@ c_1 & 0.5931 & c_2 & 0.7019 \\
 \end{figure}
 
 
-We use the meson action and equations of motion found in the paper by Gherghetta, Kapusta, and Kelley. This model finds a better phenomenological fit than the results presented in that paper, particularly for the ground state $\rho$ meson. The scalar mesons are expected to mix with the scalar glueball field of this model, and this analysis is not performed here. 
 
 Finally, the pion spectrum is analyzed in the same way as in the paper by Kelley, Bartz, and Kapusta. We find similar results, with the exception that the ground state pion is massless in this model, due to the assumption of massless quarks. The transition to the large-$n$ behavior occurs at $n=3$. It is important to note that the experimental pion data was not used as an input to fit the parameters.
 
-%\begin{figure}
-%\caption{pion spectrum.}
-%\center{\includegraphics[width=\textwidth]{Pion_Spectrum.pdf}}
-%\end{figure}
+\begin{figure}
+\caption{pion spectrum.}
+\center{\includegraphics[width=300]{pion.eps}}
+\end{figure}
 
 
 
