@@ -79,27 +79,54 @@ In this paper, we review previous attempts to find a suitable potential for the 
 After demonstrating the limitations of models including a dilaton and chiral field alone, we suggest the inclusion of a background glueball field. 
 We then construct a potential that satisfies the necessary UV and IR limits, and use this potential to generate the background fields and calculate the resulting meson spectra.
 
-\section{Review and Motivation}
+\section{Review and Motivation}\label{secReview}
 
-Previous work showed how to construct a potential for a gravity-dilaton-chiral system, assuming that the fields have power-law behavior, which is accurate in both the UV and IR limits. 
+We assume that four-dimensional QCD can be modeled by the following five-dimensional action, written in the string frame:
+\be
+S=\frac{1}{16\pi G_5} \int d^5x \root \left[ e^{-2\Phi} L_{grav} + e^{-\Phi} L_{meson}\right], 
+%problem with making the S and L's in the mathcal font, affects whole line instead of just one letter
+\ee
+where $\Phi$ is the dilaton and the metric is asymptotically AdS, $g_{MN}=z^{-2}\eta_{MN},$ with the AdS curvature defined to be unity.
+The gravitational Lagrangian includes the dilaton and chiral condensate background fields
+\be
+L_{grav}=R_s+4\partial_\mu\Phi\partial^\mu\Phi - \thalf\partial_\mu\chi\partial^\mu\chi -V(\phi,\chi).
+\ee
+The scalar fields $\Phi,\chi$ are dimensionless. 
+
+It is easier to search for the background fields in the Einstein frame, where the gravitational action takes the canonical form
+\be
+S_E=\frac{1}{16\pi G_5} \int d^5x \sqrt{-g_E}\left(R_E-\thalf\partial_\mu\phi\partial^\mu\phi -\thalf\partial_\mu\chi\partial^\mu\chi - V(\phi,\chi)\right).
+\ee
+The string and Einstein frame metrics are related by the conformal transformation
+\be
+g_{\mu\nu}^{string}=e^{2\phi/\sqrt{6}}g_{\mu\nu}^E.
+\ee
+We have also used a rescaled version of the dilaton field,
+\be
+\phi=\sqrt{\frac{8}{3}}\Phi.
+\ee
+
+
+Previous work showed how to construct a potential for such a gravity-dilaton-chiral system, assuming that the fields have power-law behavior, which is accurate in both the UV and IR limits. 
 One of the equations of motion is independent of the choice of potential,
 \be
 \chidot^2  = \frac{\rt6}{z^2} \Dz(z^2\phidot). 
 \label{twofield}
 \ee
-Examining the IR limit, we know that the dilaton should have quadratic behavior, $\phi(z)=\lambda z^2$.
- Inserting this into \label{twofield}, we find that the chiral field behaves as
+To obtain linear confinement, the dilaton should have quadratic behavior in the IR limit, $\phi(z)=\lambda z^2$.
+The chiral field should have have linear behavior, $\chi(z)=A z$, where $A$ sets the large-$n$ mass splitting between the axial-vector and vector mesons in the model. 
+Inserting this into (\ref{twofield}), we find that the chiral field behaves as
 \be
 \chi(z)=6^{3/4}\sqrt{\lambda}z,
 \ee
-which removes one of the independent parameters of the original GKK model. As shown in that paper, the IR coefficient of the chiral field sets the large-$n$ mass splitting between the axial-vector and vector mesons in the model. 
+which removes one of the independent parameters of the original GKK model. 
 Using the phenomenological value of $\lambda$, which determines the slope of the Regge trajectories, we find a mass splitting that is much too large.
 
-Because this problem arises in the equation that does not involve the potential, this issue cannot be resolved by the choice of potential in the two-field model. 
+Because this problem arises in the equation that is independent of the potential, this issue cannot be resolved by the choice of potential in the two-field model. 
 Models that derive the field behavior using the superpotential method suffer from the same problem.
 
 To resolve this problem, we suggest to add an additional scalar field to the model, $G$, representing the glueball condensate. 
-This field must be linear in the IR for linear confinement, and go as $z^4$ in the UV to match the operator dimension in the AdS/CFT dictionary.
+This field must be linear in the IR for linear confinement, and go as $G \sim z^4$ in the UV to match the operator dimension in the AdS/CFT dictionary.
 
 \section{Setup}
 Consider the action in the string frame for three fields: $\phi$, $\chi$ and $G$ representing the dilaton, a chiral field, and a glueball field with zero mass
