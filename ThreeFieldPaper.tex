@@ -378,6 +378,26 @@ Three of the parameters are most phenomenologically relevant: $\lambda,$ which c
 For each set of these parameters, the other parameters are set by a routine that minimizes the error in the equations of motion. 
 The parameters found are shown in Table \ref{tabParam}.
 
+\begin{figure}
+\center{\includegraphics[width=300]{dilaton.eps}}
+\caption{\textit{Log-log plot of the dilaton field $\phi$. The coordinate $x$ is a dimensionless re-scaling of the conformal coordinate, $x=\sqrt{\lambda}z$.}}
+\label{figDilaton}
+\end{figure}
+
+\begin{figure}[t]
+\center{\includegraphics[width=300]{chiral.eps}}
+\caption{\textit{Log-log plot of the chiral field $\chi$. }}
+\label{figChiral}
+\end{figure}
+
+\begin{figure}
+\center{\includegraphics[width=300]{glueball.eps}}
+\caption{\textit{Log-log plot of the glueball field $G$.}}
+\label{figGlueball}
+\end{figure}
+
+The background fields that are obtained from this analysis are shown in Figures \ref{figDilaton}-\ref{figGlueball}. The asymptotic power-law behavior of the fields is evident in the linear portions of the log-log scale plots shown. The "transition" behavior is most evident in the dilaton because of the large value of $\beta_1$, which controls the value of $z$ at which the field transitions from the UV limit to the IR limit. 
+
 \begin{table}
 \begin{center}
 \begin{tabular}{| l | c || c | r | }
@@ -396,17 +416,24 @@ The parameters found are shown in Table \ref{tabParam}.
 
 
 We now analyze the ``extra" term in the potential, $\Delta \tilde{U}$. 
+We obtain this term numerically by subtracting the right-hand side of \ref{U} from its left-hand side.
 This term can be approximated numerically as the sum of two Gaussians of the dilaton, 
 \be
 \Delta \tilde{U}\left(\phi\right) = \alpha_1 e^{-\left(\left(\phi-b_1\right)/c_1\right)^2} + \alpha_2 e^{-\left(\left(\phi-b_2\right)/c_2\right)^2}.
 \ee
 The best-fit values for these parameters are shown in Table \ref{tabGauss}.
 
+\begin{figure}
+\center{\includegraphics[width=300]{deltaU.eps}}
+\caption{\textit{Plot of the ``extra" term in the potential, $\Delta \tilde{U}(\phi)$.}}
+\label{figdeltaU}
+\end{figure}
+
 \begin{table}
 \begin{center}
 \begin{tabular}{| l | c || c | r | }
 \hline
-\alpha_1 & 39.26 & \alpha_2 & 52.45 \\
+\alpha_1 & -39.26 & \alpha_2 & -52.45 \\
 b_1 & 0.9967 & b_2 & 1.408 \\
 c_1 & 0.5931 & c_2 & 0.7019 \\
   \hline
