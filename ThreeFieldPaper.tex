@@ -87,6 +87,7 @@ We then construct a potential that satisfies the necessary UV and IR limits, and
 We assume that four-dimensional QCD can be modeled by the following five-dimensional action, written in the string frame:
 \be
 S=\frac{1}{16\pi G_5} \int d^5x \root \left[ e^{-2\Phi} L_{grav} + e^{-\Phi} L_{meson}\right], 
+\label{eqStringAction}
 %problem with making the S and L's in the mathcal font, affects whole line instead of just one letter
 \ee
 where $\Phi$ is the dilaton and the metric is asymptotically AdS, $g_{MN}=z^{-2}\eta_{MN},$ with the AdS curvature defined to be unity.
@@ -417,18 +418,29 @@ c_1 & 0.5931 & c_2 & 0.7019 \\
 
 \section{Meson Spectra}
 
-We use the meson action and equations of motion found in the paper by Gherghetta, Kapusta, and Kelley. 
-This model finds a better phenomenological fit than the results presented in that paper, particularly for the ground state $\rho$ meson. 
+We use the GKK meson Lagrangian in the action (\ref{eqStringAction}),
+\be
+L_{meson}=\left|DX\right|^2+m_X^2\left|X\right|^2-\kappa\left|X\right|^4 +\frac{1}{2g_5^2}\left(F_A^2 +F_V^2\right).
+\ee
+The covariant derivative is defined as $D_M = \partial_M+i[V_M,X]-i\{A_M,X\}$. The $2 \times 2$ scalar  field $X$ contains the scalar and pseudoscalar fields $(S,\pi)$, as well as a non-trivial vacuum expectation value, dual to the $q\bar{q}$ operator, which we have identified with the field $\chi(z)$.
+The AdS/CFT dictionary sets the mass for the fields according to the dimension of the dual operator,
+\be
+m^2L^2=\Delta(\Delta-4).
+\ee
+The dimension of the $q\bar{q}$ operator is 3, so $m_X^2 = -3/L^2$.
+
+This model finds a better phenomenological fit than the results presented in the GKK paper, particularly for the ground state $\rho$ meson, as shown in Figure \ref{figRho}. 
 The scalar mesons are expected to mix with the scalar glueball field of this model, and this analysis is not performed here. 
 
 \begin{figure}
 \center{\includegraphics[width=300]{axial.eps}}
-\caption{$a_1$ spectrum.}
+\caption{$a_1$ meson spectrum.}
 \end{figure}
 
 \begin{figure}
 \center{\includegraphics[width=300]{rho.eps}}
-\caption{$\rho$ spectrum.}
+\caption{$\rho$ meson spectrum.}
+\label{figRho}
 \end{figure}
 
 
