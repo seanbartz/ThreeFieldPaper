@@ -458,7 +458,18 @@ m^2L^2=\Delta(\Delta-4).
 The dimension of the $q\bar{q}$ operator is 3, so $m_X^2 = -3/L^2$.
 
 We find the equations of motion for the various meson fields by varying the meson action.
-The resulting equations are analytically solvable in the IR limit, but full analysis requires the use of a numerical shooting method to find the mass eigenvalues.
+For the vector and axial-vector fields, we  assume that the Kaluza-Klein modes are separable from the 4D parts of the fields.
+The equation of motion in the axial gauge $\Psi_5=0$  is given by
+\be
+-\partial_z^2\Psi_n+\omega'\partial_z\Psi_n +M_\Psi^2(z) \Psi_n=m^2_{\Psi_n}\Psi_n,
+\ee
+where $\omega=\phi(z)+log(z)$. 
+The $z$-dependent mass term coefficient $M_\Psi=0$  for the vector field, and $M_\Psi=g_5\chi/z$ for the axial field.
+The equation can be put in the Schr{\"o}dinger form with the substitution $\Psi_n=e^{\omega/2}\psi_n$, resulting in
+\be
+-\partial^2_z\psi_n+\left(\oneqt \omega^{'2}-\thalf\omega^{''}+M_\psi^2\right)\psi_n=m^2_{\Psi_n}\psi_n.
+\ee
+These equations are analytically solvable in the IR limit, but full analysis requires the use of a numerical shooting method to find the mass eigenvalues.
 This model finds a better phenomenological fit than the results presented in the GKK paper, particularly for the ground state $\rho$ meson, as shown in Figure \ref{figRho}. 
 The scalar mesons are expected to mix with the scalar glueball field of this model, and this analysis is not performed here. 
 
@@ -474,8 +485,20 @@ The scalar mesons are expected to mix with the scalar glueball field of this mod
 \end{figure}
 
 Finally, the pion spectrum is analyzed in the same way as in the KBK paper.
-We find similar results, with the exception that the ground state pion is massless in this model, due to the assumption of massless quarks. 
-The transition to the large-$n$ behavior occurs at $n=3$. 
+We use the linear representation of the scalar field,
+\be
+X = \left(\chi(z)/2+S(x,z)\right) \, \text{I} + i \pi(x,z)^{a}t^{a},
+\ee
+where $\text{I}$ is the $2\times2$ identity matrix.
+The pseudoscalar field $\pi$ mixes with the longitudinal component of the axial field, resulting in a set of coupled equations of motion.
+Defining $A_\mu =A_{\mu\perp}+\partial_\mu \varphi$, where $\partial_\mu A^\mu=0$, the equations of motion that result are
+\ba
+&&-\phi_{n}'' + \left(\frac{\phi'^{2}}{4} - \frac{\phi''}{2} + \frac{3}{4z^{2}} + \frac{\phi'}{2 z} + \frac{g_{5}^{2}L^{2}\chi^{2}}{z^{2}}\right)\varphi_{n} = \frac{g_{5}^{2}L \chi}{z}\pi_{n}\label{eqSchphi} \\
+&&-\pi_{n}'' + \left(\frac{\phi'^{2}}{4} - \frac{\phi''}{2} + \frac{3}{4z^{2}} + \frac{3\phi'}{2 z} - \frac{\kappa L^{2}\chi^{2}}{2z^{2}} - m_{n}^{2} \right)\pi_{n} = -m_{n}^{2}\frac{\chi L}{z}\varphi_{n}.  \label{eqSchpi}
+\ea
+
+Using the same numerical technique, we find similar results, with the exception that the ground state pion is massless in this model, due to the assumption of massless quarks. 
+The transition to the large-$n$ behavior occurs at $n\approx 4$. 
 It is important to note that the experimental pion data was not used as an input to fit the parameters in Table \ref{tabParam}.
 The quartic scalar term in (\ref{eqMesonL}) was added to get the proper chiral symmetry breaking behavior in a model without an action for the background fields.
 This term does not affect the spectra for the $\rho$ and $a_1$ mesons, but it does affect the scalar and pseudoscalar spectra.
