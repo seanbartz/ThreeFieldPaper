@@ -378,19 +378,19 @@ Three of the parameters are most phenomenologically relevant: $\lambda,$ which c
 For each set of these parameters, the other parameters are set by a routine that minimizes the error in the equations of motion. 
 The parameters found are shown in Table \ref{tabParam}.
 
-\begin{figure}
+\begin{figure}[htb]
 \center{\includegraphics[width=300]{dilaton.eps}}
 \caption{\textit{Log-log plot of the dilaton field $\phi$. The coordinate $x$ is a dimensionless re-scaling of the conformal coordinate, $x=\sqrt{\lambda}z$.}}
 \label{figDilaton}
 \end{figure}
 
-\begin{figure}[t]
+\begin{figure}[htb]
 \center{\includegraphics[width=300]{chiral.eps}}
 \caption{\textit{Log-log plot of the chiral field $\chi$. }}
 \label{figChiral}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[htb]
 \center{\includegraphics[width=300]{glueball.eps}}
 \caption{\textit{Log-log plot of the glueball field $G$.}}
 \label{figGlueball}
@@ -398,7 +398,7 @@ The parameters found are shown in Table \ref{tabParam}.
 
 The background fields that are obtained from this analysis are shown in Figures \ref{figDilaton}-\ref{figGlueball}. The asymptotic power-law behavior of the fields is evident in the linear portions of the log-log scale plots shown. The "transition" behavior is most evident in the dilaton because of the large value of $\beta_1$, which controls the value of $z$ at which the field transitions from the UV limit to the IR limit. 
 
-\begin{table}
+\begin{table}[htb]
 \begin{center}
 \begin{tabular}{| l | c || c | r | }
 \hline
@@ -423,14 +423,15 @@ This term can be approximated numerically as the sum of two Gaussians of the dil
 \ee
 The best-fit values for these parameters are shown in Table \ref{tabGauss}.
 
-\begin{figure}
+\begin{figure}[htb]
 \center{\includegraphics[width=300]{deltaU.eps}}
 \caption{\textit{Plot of the ``extra" term in the potential, $\Delta \tilde{U}(\phi)$.}}
 \label{figdeltaU}
 \end{figure}
 
-\begin{table}
+\begin{table}[htb]
 \begin{center}
+\label{tabGauss}
 \begin{tabular}{| l | c || c | r | }
 \hline
 \alpha_1 & -39.26 & \alpha_2 & -52.45 \\
@@ -438,7 +439,6 @@ b_1 & 0.9967 & b_2 & 1.408 \\
 c_1 & 0.5931 & c_2 & 0.7019 \\
   \hline
 \end{tabular}
-\label{tabGauss}
 \caption{The parameters for the fitting to $\Delta \tilde{U}$}
 \end{center}
 \end{table}
@@ -448,6 +448,7 @@ c_1 & 0.5931 & c_2 & 0.7019 \\
 We use the GKK meson Lagrangian in the action (\ref{eqStringAction}),
 \be
 L_{meson}=\left|DX\right|^2+m_X^2\left|X\right|^2-\kappa\left|X\right|^4 +\frac{1}{2g_5^2}\left(F_A^2 +F_V^2\right).
+\label{eqMesonL}
 \ee
 The covariant derivative is defined as $D_M = \partial_M+i[V_M,X]-i\{A_M,X\}$. The $2 \times 2$ scalar  field $X$ contains the scalar and pseudoscalar fields $(S,\pi)$, as well as a non-trivial vacuum expectation value, dual to the $q\bar{q}$ operator, which we have identified with the field $\chi(z)$.
 The AdS/CFT dictionary sets the mass for the fields according to the dimension of the dual operator,
@@ -456,32 +457,34 @@ m^2L^2=\Delta(\Delta-4).
 \ee
 The dimension of the $q\bar{q}$ operator is 3, so $m_X^2 = -3/L^2$.
 
+We find the equations of motion for the various meson fields by varying the meson action.
+The resulting equations are analytically solvable in the IR limit, but full analysis requires the use of a numerical shooting method to find the mass eigenvalues.
 This model finds a better phenomenological fit than the results presented in the GKK paper, particularly for the ground state $\rho$ meson, as shown in Figure \ref{figRho}. 
 The scalar mesons are expected to mix with the scalar glueball field of this model, and this analysis is not performed here. 
 
-\begin{figure}
+\begin{figure}[htb]
 \center{\includegraphics[width=300]{axial.eps}}
 \caption{$a_1$ meson spectrum.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[htb]
 \center{\includegraphics[width=300]{rho.eps}}
 \caption{$\rho$ meson spectrum.}
 \label{figRho}
 \end{figure}
 
+Finally, the pion spectrum is analyzed in the same way as in the KBK paper.
+We find similar results, with the exception that the ground state pion is massless in this model, due to the assumption of massless quarks. 
+The transition to the large-$n$ behavior occurs at $n=3$. 
+It is important to note that the experimental pion data was not used as an input to fit the parameters in Table \ref{tabParam}.
+The quartic scalar term in (\ref{eqMesonL}) was added to get the proper chiral symmetry breaking behavior in a model without an action for the background fields.
+This term does not affect the spectra for the $\rho$ and $a_1$ mesons, but it does affect the scalar and pseudoscalar spectra.
+We have neglected this field in our current analysis by setting $\kappa = 0$, but it could be treated as an additional free parameter to fit the pion and $f_0$ spectra.
 
-
-Finally, the pion spectrum is analyzed in the same way as in the paper by Kelley, Bartz, and Kapusta.
- We find similar results, with the exception that the ground state pion is massless in this model, due to the assumption of massless quarks. 
- The transition to the large-$n$ behavior occurs at $n=3$. 
- It is important to note that the experimental pion data was not used as an input to fit the parameters.
-
-\begin{figure}
+\begin{figure}[htb]
 \center{\includegraphics[width=300]{pion.eps}}
 \caption{\textit{Pion spectrum. The ground state is massless in the chiral limit. The model was calculated with $\kappa=0$ in the meson action. The $n=4,5$ states are unconfirmed and are found only in the extended version of the PDG.}}
 \end{figure}
-
 
 
 
