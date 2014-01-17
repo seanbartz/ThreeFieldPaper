@@ -362,9 +362,9 @@ As an alternative to direct solution, we parameterize the fields as follows:
 where $f(z)$ is some function that transitions smoothly from 1 at small values of $z$ to 0 at large $z$, and $\psi(z)_{xx}$ represents the known UV and IR limits of the fields $\phi, \chi,$ and $G$. 
 The switching functions $f$ need not be the same for each field. We choose 
 \ba
-f_\phi(z)&=&e^{-(\beta_1z)^{10}}\\
+f_\phi(z)&=&e^{-(\beta_1z)^{10}}\\ \label{param1}
 f_\chi(z)&=&e^{-(\beta_2z)^4}\\
-f_G(z)&=&e^{-(\beta_3z)^5}.
+f_G(z)&=&e^{-(\beta_3z)^5}. \label{param3}
 \ea
 The powers of the exponential are chosen to be greater than the known power-law behavior of the fields in the UV limit, so as to not interfere with this behavior. 
 The $\beta_i$ will be set by numerical fitting.
@@ -508,6 +508,39 @@ We have neglected this field in our current analysis by setting $\kappa = 0$, bu
 \center{\includegraphics[width=300]{pion.eps}}
 \caption{\textit{Pion spectrum. The ground state is massless in the chiral limit. The model was calculated with $\kappa=0$ in the meson action. The $n=4,5$ states are unconfirmed and are found only in the extended version of the PDG.}}
 \end{figure}
+
+\section{Conclusion}
+
+We discussed the construction of a potential for the background fields of a soft-wall AdS/QCD model. 
+We showed the limitation of a model that contains only the dilaton and chiral condensate fields, and suggested a solution by adding a glueball condensate to the model.
+We analytically constructed a general potential $\tilde{U}(\phi,\chi,G)$ that recovers the necessary asymptotic behavior of the background fields.
+Using this as a basis, we numerically constructed a potential that solves the selected background equations to within an accuracy of $10^-4$. 
+There is an additional allowed term in the  potential, $\Delta \tilde{U}(\phi)$ that does not affect the equations that were used in the numerical procedure. 
+This term was found numerically, and fit as a function of the dilaton alone.
+These background fields can then be used to find the spectra of the light vector, axial-vector, and pseudoscalar mesons.
+The model shows good phenomenological agreement with the experimental data for the meson spectra.
+
+The potential as constructed is not guaranteed to be unique.
+If a different set of the background equations is chosen, the extra term would be expressed as a function of fields other than the dilaton.
+The parameterization in (\ref{param1}-\ref{param3}) could also be chosen differently, resulting in a different potential but making little difference to the resulting meson spectra.
+Finally, terms can be added that do not affect the equations of motion at all, i.e. terms such that 
+\be
+\Delta \tilde{U} = \Delta \frac{\partial \tilde{U}}{\partial \phi} = \Delta \frac{\partial \tilde{U}}{\partial \chi} = \Delta \frac{\partial \tilde{U}}{\partial G} =0.
+\ee
+
+This work demonstrates the construction of a potential for the background fields of a soft-wall AdS/QCD model that captures several key features of QCD observed through meson spectra.
+The radially excited states of the light mesons have linear Regge trajectories.
+Chiral symmetry is not restored for highly-excited mesons, as seen in the constant mass-splitting of the vector and axial-vector mesons.
+The ground state pion is massless because the chiral symmetry is not explicitly broken with a non-zero quark mass.
+
+Future improvements to this model will include incorporating the quark mass by adding a linear term to the UV limit of the chiral condensate field.
+The scalar $f_0$ meson spectrum should be explored, which will require analyzing glueball mixing.
+This potential also opens the possibility of exploring the thermal properties of a model that has the correct chiral symmetry breaking behavior.
+
+
+\section*{Acknowledgments}
+SB thanks Thomas Kelley for the use of numerical codes for the pion spectra.
+This research is supported in part by the Department of Energy Office of Science Graduate Fellowship Program (DOE SCGF), made possible in part by  the American Recovery and Reinvestment Act of 2009, administered by ORISE-ORAU under contract no. DE-AC05-06OR23100.
 
 
 
