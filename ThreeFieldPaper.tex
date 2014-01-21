@@ -1,4 +1,12 @@
-\documentstyle[epsfig,12pt]{article}
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{times}
+\usepackage{multicol}
+\usepackage{fullpage}
 
 \topmargin -.8cm
 \oddsidemargin  10.5pt
@@ -32,7 +40,9 @@
 \def\rt6{\sqrt{6}}
 \def\mL2{(m_{\phi}L)^2}
 
-\usepackage{graphicx}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cS}{\mathcal S}
+
 
 \renewcommand{\baselinestretch}{1.0}
 \raggedbottom %for right-justified text, remove \raggedright
@@ -86,20 +96,20 @@ We then construct a potential that satisfies the necessary UV and IR limits, and
 
 We assume that four-dimensional QCD can be modeled by the following five-dimensional action, written in the string frame:
 \be
-S=\frac{1}{16\pi G_5} \int d^5x \root \left[ e^{-2\Phi} L_{grav} + e^{-\Phi} L_{meson}\right], 
+\cS =\frac{1}{16\pi G_5} \int d^5x \sqrt{-g} \left[ e^{-2\Phi} \cL_{grav} + e^{-\Phi} \cL_{meson} \right], 
 \label{eqStringAction}
 %problem with making the S and L's in the mathcal font, affects whole line instead of just one letter
 \ee
 where $\Phi$ is the dilaton and the metric is asymptotically AdS, $g_{MN}=z^{-2}\eta_{MN},$ with the AdS curvature defined to be unity.
 The gravitational Lagrangian includes the dilaton and chiral condensate background fields
 \be
-L_{grav}=R_s+4\partial_\mu\Phi\partial^\mu\Phi - \thalf\partial_\mu\chi\partial^\mu\chi -V(\phi,\chi).
+\cL_{grav}=R_s+4\partial_\mu\Phi\partial^\mu\Phi - \thalf\partial_\mu\chi\partial^\mu\chi -V(\phi,\chi).
 \ee
 The scalar fields $\Phi,\chi$ are dimensionless. 
 
 It is easier to search for the background fields in the Einstein frame, where the gravitational action takes the canonical form
 \be
-S_E=\frac{1}{16\pi G_5} \int d^5x \sqrt{-g_E}\left(R_E-\thalf\partial_\mu\phi\partial^\mu\phi -\thalf\partial_\mu\chi\partial^\mu\chi - V(\phi,\chi)\right).
+\cS_E=\frac{1}{16\pi G_5} \int d^5x \sqrt{-g_E}\left(R_E-\thalf\partial_\mu\phi\partial^\mu\phi -\thalf\partial_\mu\chi\partial^\mu\chi - V(\phi,\chi)\right).
 \ee
 The string and Einstein frame metrics are related by the conformal transformation
 \be
@@ -135,7 +145,7 @@ This field must be linear in the IR for linear confinement, and go as $G \sim z^
 \section{Setup}
 Consider the action in the string frame for three fields: $\phi$, $\chi$ and $G$ representing the dilaton, a chiral field, and a glueball field with zero mass
 \be
-S_{string}=\frac{1}{16\pi G_5} \int d^5x \root e^{-2\Phi} \left(R_s\partial_\mu\Phi\partial^\mu\Phi - \thalf\partial_\mu\chi\partial^\mu\chi - \thalf\partial_\mu G \partial^\mu G -e^{-4\Phi/3}V(\phi,\chi,G)\right)
+\cS_{string}=\frac{1}{16\pi G_5} \int d^5x \root e^{-2\Phi} \left(R_s\partial_\mu\Phi\partial^\mu\Phi - \thalf\partial_\mu\chi\partial^\mu\chi - \thalf\partial_\mu G \partial^\mu G -e^{-4\Phi/3}V(\phi,\chi,G)\right)
 \ee
 
 The potential in the Einstein frame, where the action has its canonical form, is
@@ -434,9 +444,9 @@ The best-fit values for these parameters are shown in Table \ref{tabFit}.
 \label{tabFit}
 \begin{tabular}{| l | r | }
 \hline
-\alpha & -77.07  \\ % plus/minus .03
-b & 0.6819 \\ %plus/minus .0007
-c & 0.9219 \\ %plus/minus .0004
+$\alpha$ & -77.07  \\ % plus/minus .03
+$b$ & 0.6819 \\ %plus/minus .0007
+$c$ & 0.9219 \\ %plus/minus .0004
   \hline
 \end{tabular}
 \caption{The parameters for the fitting to $\Delta \tilde{U}$}
@@ -447,7 +457,7 @@ c & 0.9219 \\ %plus/minus .0004
 
 We use the GKK meson Lagrangian in the action (\ref{eqStringAction}),
 \be
-L_{meson}=\left|DX\right|^2+m_X^2\left|X\right|^2-\kappa\left|X\right|^4 +\frac{1}{2g_5^2}\left(F_A^2 +F_V^2\right).
+\cL_{meson}=\left|DX\right|^2+m_X^2\left|X\right|^2-\kappa\left|X\right|^4 +\frac{1}{2g_5^2}\left(F_A^2 +F_V^2\right).
 \label{eqMesonL}
 \ee
 The covariant derivative is defined as $D_M = \partial_M+i[V_M,X]-i\{A_M,X\}$. The $2 \times 2$ scalar  field $X$ contains the scalar and pseudoscalar fields $(S,\pi)$, as well as a non-trivial vacuum expectation value, dual to the $q\bar{q}$ operator, which we have identified with the field $\chi(z)$.
