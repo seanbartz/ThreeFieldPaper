@@ -445,8 +445,8 @@ The best-fit values for these parameters are shown in Table \ref{tabFit}.
 \begin{tabular}{| l | r | }
 \hline
 $\alpha$ & -77.07  \\ % plus/minus .03
-$b$ & 0.6819 \\ %plus/minus .0007
-$c$ & 0.9219 \\ %plus/minus .0004
+$b$ & 0.9219  \\ %plus/minus .0004
+$c$ & 0.6819\\ %plus/minus .0007
   \hline
 \end{tabular}
 \caption{The parameters for the fitting to $\Delta \tilde{U}$}
@@ -485,38 +485,13 @@ The scalar mesons are expected to mix with the scalar glueball field of this mod
 
 \begin{figure}[htb]
 \center{\includegraphics[width=300]{axial.eps}}
-\caption{$a_1$ meson spectrum.}
+\caption{\textit{$a_1$ meson spectrum.}}
 \end{figure}
 
 \begin{figure}[htb]
 \center{\includegraphics[width=300]{rho.eps}}
-\caption{$\rho$ meson spectrum.}
+\caption{\textit{$\rho$ meson spectrum.}}
 \label{figRho}
-\end{figure}
-
-Finally, the pion spectrum is analyzed in the same way as in the KBK paper.
-We use the linear representation of the scalar field,
-\be
-X = \left(\chi(z)/2+S(x,z)\right) \, \text{I} + i \pi(x,z)^{a}t^{a},
-\ee
-where $\text{I}$ is the $2\times2$ identity matrix.
-The pseudoscalar field $\pi$ mixes with the longitudinal component of the axial field, resulting in a set of coupled equations of motion.
-Defining $A_\mu =A_{\mu\perp}+\partial_\mu \varphi$, where $\partial_\mu A^\mu=0$, the equations of motion that result are
-\ba
-&&-\phi_{n}'' + \left(\frac{\phi'^{2}}{4} - \frac{\phi''}{2} + \frac{3}{4z^{2}} + \frac{\phi'}{2 z} + \frac{g_{5}^{2}L^{2}\chi^{2}}{z^{2}}\right)\varphi_{n} = \frac{g_{5}^{2}L \chi}{z}\pi_{n}\label{eqSchphi} \\
-&&-\pi_{n}'' + \left(\frac{\phi'^{2}}{4} - \frac{\phi''}{2} + \frac{3}{4z^{2}} + \frac{3\phi'}{2 z} - \frac{\kappa L^{2}\chi^{2}}{2z^{2}} - m_{n}^{2} \right)\pi_{n} = -m_{n}^{2}\frac{\chi L}{z}\varphi_{n}.  \label{eqSchpi}
-\ea
-
-Using the same numerical technique, we find similar results, with the exception that the ground state pion is massless in this model, due to the assumption of massless quarks. 
-The transition to the large-$n$ behavior occurs at $n\approx 4$. 
-It is important to note that the experimental pion data was not used as an input to fit the parameters in Table \ref{tabParam}.
-The quartic scalar term in (\ref{eqMesonL}) was added to get the proper chiral symmetry breaking behavior in a model without an action for the background fields.
-This term does not affect the spectra for the $\rho$ and $a_1$ mesons, but it does affect the scalar and pseudoscalar spectra.
-We have neglected this field in our current analysis by setting $\kappa = 0$, but it could be treated as an additional free parameter to fit the pion and $f_0$ spectra.
-
-\begin{figure}[htb]
-\center{\includegraphics[width=300]{pion.eps}}
-\caption{\textit{Pion spectrum. The ground state is massless in the chiral limit. The model was calculated with $\kappa=0$ in the meson action. The $n=4,5$ states are unconfirmed and are found only in the extended version of the PDG.}}
 \end{figure}
 
 \section{Conclusion}
@@ -527,7 +502,7 @@ We analytically constructed a general potential $\tilde{U}(\phi,\chi,G)$ that re
 Using this as a basis, we numerically constructed a potential that solves the selected background equations to within an accuracy of $10^-4$. 
 There is an additional allowed term in the  potential, $\Delta \tilde{U}(\phi)$ that does not affect the equations that were used in the numerical procedure. 
 This term was found numerically, and fit as a function of the dilaton alone.
-These background fields can then be used to find the spectra of the light vector, axial-vector, and pseudoscalar mesons.
+These background fields can then be used to find the spectra of the light vector and axial-vector mesons.
 The model shows good phenomenological agreement with the experimental data for the meson spectra.
 
 The potential as constructed is not guaranteed to be unique.
@@ -541,15 +516,14 @@ Finally, terms can be added that do not affect the equations of motion at all, i
 This work demonstrates the construction of a potential for the background fields of a soft-wall AdS/QCD model that captures several key features of QCD observed through meson spectra.
 The radially excited states of the light mesons have linear Regge trajectories.
 Chiral symmetry is not restored for highly-excited mesons, as seen in the constant mass-splitting of the vector and axial-vector mesons.
-The ground state pion is massless because the chiral symmetry is not explicitly broken with a non-zero quark mass.
 
 Future improvements to this model will include incorporating the quark mass by adding a linear term to the UV limit of the chiral condensate field.
-The scalar $f_0$ meson spectrum should be explored, which will require analyzing glueball mixing.
+The pseudo scalar and scalar $f_0$ meson spectrum should be explored, which will require analyzing how the equations of motion mix with the scalar potential.
 This potential also opens the possibility of exploring the thermal properties of a model that has the correct chiral symmetry breaking behavior.
 
 
 \section*{Acknowledgments}
-SB thanks Thomas Kelley for the use of numerical codes for the pion spectra.
+SB thanks Tony Gherghetta and Aleksey Cherman for useful discussions.
 This research is supported in part by the Department of Energy Office of Science Graduate Fellowship Program (DOE SCGF), made possible in part by  the American Recovery and Reinvestment Act of 2009, administered by ORISE-ORAU under contract no. DE-AC05-06OR23100.
 
 
