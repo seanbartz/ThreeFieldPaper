@@ -73,19 +73,19 @@ The outlook for application of this model to finite temperature systems is also 
 \section{Introduction}
 
 The Anti-de Sitter Space/Conformal Field Theory (AdS/CFT) correspondence is a useful mathematical tool for the analysis of strongly-coupled gauge theories.
-This correspondence correspondence establishes a connection between an $n$-dimensional Super-Yang Mills Theory and a weakly-coupled gravitational theory in $n+1$ dimensions. 
+This correspondence correspondence establishes a connection between an $n$-dimensional Super-Yang Mills Theory and a weakly-coupled gravitational theory in $n+1$ dimensions \cite{maldacena, Gubser1998, Witten:1998}. 
 Calculations that are analytically intractable in the field theory can be related to results from the gravity theory using an effective dictionary developed over the past decade. 
 Quantum chromodynamics (QCD) is a strongly-coupled gauge theory at hadronic scales, making it a candidate for the application of the gauge/gravity correspondence.
 It is not known whether a gravitational dual to QCD exists, but there has been much work on models that capture its key features.
 The bottom-up approach assumes the existence of such a dual, modeling features of QCD by an effective five-dimensional gravity theory.
-Linear confinement in QCD sets a scale that is encoded in a cut-off of the fifth dimension in the AdS/QCD model. 
-So-called soft-wall models use a dilaton field as an effective cut-off to limit the penetration of the meson fields into the bulk. 
-The simplest soft-wall models use a quadratic dilaton to recover the linear Regge trajectories, while models that modify the UV behavior of the dilaton more accurately model the ground state masses.
+Linear confinement in QCD sets a scale that is encoded in a cut-off of the fifth dimension in the AdS/QCD model \cite{stephanov-katz-son, DaRold2005}. 
+So-called soft-wall models use a dilaton field as an effective cut-off to limit the penetration of the meson fields into the bulk \cite{karch-katz-son-adsqcd}. 
+The simplest soft-wall models use a quadratic dilaton to recover the linear Regge trajectories, while models that modify the UV behavior of the dilaton more accurately model the ground state masses \cite{gherghetta-kelley, bartz-pions, Colangelo2008, Cui2013}.
 
 The soft-wall models typically include at least two background fields: the aforementioned dilaton, and a chiral condensate field that corresponds to the chiral symmetry breaking in the gauge theory.
 These models use parametrizations for the background dilaton and chiral fields that are not derived as the solution to any equations of motion. 
 A well-defined action would provide a set of background equations from which these fields can be derived, and may suggest how the model can be derived from a top-down approach. 
-In addition, this action provides access to the thermal properties of the model through perturbation of the geometry.
+In addition, this action provides access to the thermal properties of the model through perturbation of the geometry \cite{Herzog2007, Bayona2008, Gursoy2008b}.
 
 In this paper, we expand upon previous work to find a suitable potential for the background fields of a soft-wall AdS/QCD model. 
 After demonstrating the limitations of models including a dilaton and chiral field alone, we suggest the inclusion of a background glueball field. 
@@ -121,7 +121,7 @@ We have also used a rescaled version of the dilaton field,
 \ee
 
 
-Previous work showed how to construct a potential for such a gravity-dilaton-chiral system, assuming that the fields have power-law behavior, which is accurate in both the UV and IR limits. 
+Previous work showed how to construct a potential for such a gravity-dilaton-chiral system, assuming that the fields have power-law behavior, which is accurate in both the UV and IR limits, \cite{Springer 2010}. 
 One of the equations of motion is independent of the choice of potential,
 \be
 \chidot^2  = \frac{\rt6}{z^2} \Dz(z^2\phidot). 
@@ -129,6 +129,7 @@ One of the equations of motion is independent of the choice of potential,
 \ee
 To obtain linear confinement, the dilaton should have quadratic behavior in the IR limit, $\phi(z)=\lambda z^2$.
 The chiral field should have have linear behavior, $\chi(z)=A z$, where $A$ sets the large-$n$ mass splitting between the axial-vector and vector mesons in the model. 
+This constant mass-splitting at large $n$ occurs because of the non-restoration of chiral symmetry \cite{Shifman-2008}.
 Inserting this into (\ref{twofield}), we find that the chiral field behaves as
 \be
 \chi(z)=6^{3/4}\sqrt{\lambda}z,
@@ -142,7 +143,7 @@ Models that derive the field behavior using the superpotential method suffer fro
 To resolve this problem, we suggest to add an additional scalar field to the model, $G$, representing the glueball condensate. 
 This field must be linear in the IR for linear confinement, and go as $G \sim z^4$ in the UV to match the operator dimension in the AdS/CFT dictionary.
 
-It is noted that the model proposed by Huang and Li accurately models the non-restoration of chiral symmetry using a model with only two background fields, but their model differs from the work presented here in several respects.
+It is noted that the model proposed by Huang and Li \cite{Li2013, Li2013a} accurately models the non-restoration of chiral symmetry using a model with only two background fields, but their model differs from the work presented here in several respects.
 They allow the metric to be solved dynamically based upon the chosen parametrization for the background fields, while we maintain a metric that is strictly AdS.
 The IR behavior of the chiral field in their model is set by examining the quark potential, and approaches a constant value, as opposed to the linear behavior described above.
 Finally, they do not determine an explicit form of the potential, which is the central goal of this work.
@@ -329,7 +330,7 @@ Including now $m$ = 10 and 12, and $n$ = 9 and 11, we have the following set of 
 + 32 G_0^3 z^{12} \left[ - \frac{1}{9} + 3 \frac{G_{12}}{G_0^3} \right] \\
 \left(\frac{\partial \tilde{U}}{\partial G}\right)_{\rm RHS} &=& \Sigma_0^2 G_0 z^{10} \left[ \frac{\rt6}{14} (a_2 + g a_6) + 2a_5 \right]
 + G_0^3 z^{12} \left[ \frac{2\rt6}{27}  (a_2 + g a_6) + 4a_4 \right]
-\ee
+\ea
 
 Altogether, from both the UV and IR limits, there are ten independent equations for the twelve parameters $a_0 - a_6$, $\Sigma_9$, $\Sigma_{11}$, $G_{10}$, $G_{12}$, and $g$.  
 We take $g$ as the free parameter to use as the rate of transition from small $z$ to large $z$.  
@@ -491,12 +492,12 @@ The scalar mesons are expected to mix with the scalar glueball field of this mod
 
 \begin{figure}[htb]
 \center{\includegraphics[width=300]{axial.eps}}
-\caption{\textit{$a_1$ meson spectrum.}}
+\caption{\textit{$a_1$ meson spectrum \cite{PDG}.}}
 \end{figure}
 
 \begin{figure}[htb]
 \center{\includegraphics[width=300]{rho.eps}}
-\caption{\textit{$\rho$ meson spectrum.}}
+\caption{\textit{$\rho$ meson spectrum \cite{PDG}.}}
 \label{figRho}
 \end{figure}
 
@@ -531,6 +532,11 @@ This potential also opens the possibility of exploring the thermal properties of
 \section*{Acknowledgments}
 SB thanks Tony Gherghetta and Aleksey Cherman for useful discussions.
 This research is supported in part by the Department of Energy Office of Science Graduate Fellowship Program (DOE SCGF), made possible in part by  the American Recovery and Reinvestment Act of 2009, administered by ORISE-ORAU under contract no. DE-AC05-06OR23100.
+
+\vfill
+
+\bibliographystyle{phys-rev}
+\bibliography{ThreeField}
 
 
 
