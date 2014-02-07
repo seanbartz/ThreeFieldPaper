@@ -146,17 +146,22 @@ Finally, they do not determine an explicit form of the potential, which is the c
 
 
 \section{Setup}
-Consider the action in the string frame for three fields: $\phi$, $\chi$ and $G$ representing the dilaton, a chiral field, and a glueball field with zero mass
+Consider the action in the Einstein frame for three fields: $\phi$, $\chi$ and $G$ representing the dilaton, a chiral field, and a glueball field with zero mass
 \be
-\cS=\frac{1}{16\pi G_5} \int d^5x \root e^{-2\Phi} \left(R+\partial_\mu\Phi\partial^\mu\Phi - \thalf\partial_\mu\chi\partial^\mu\chi - \thalf\partial_\mu G \partial^\mu G -V(\Phi,\chi,G)\right)
+\cS_E=\frac{1}{16\pi G_5} \int d^5x \sqrt{-\tilde{g}}\left(\tilde{R}-\thalf\partial_\mu\phi\partial^\mu\phi -\thalf\partial_\mu\chi\partial^\mu\chi -\thalf\partial_\mu G\partial^\mu G - \tilde{V}(\phi,\chi,G)\right).
 \ee
-
-The potential in the Einstein frame, where the action has its canonical form, is
+To simplify the equations of motion, we use a transformed potential, 
 \be
-\tilde{V} = -12 + 4\sqrt{6}\phi + a_0\phi^2 -\tthalf\chi^2 + \tilde{U}
+V=e^{-2\phi/\rt6}\tilde{V}.
+\label{transform}
+\ee
+It is noted that this is simply the potential in the string frame.
+We re-write the potential as
+\be
+V = -12 + 4\sqrt{6}\phi + a_0\phi^2 -\tthalf\chi^2 + U.
 \label{V}
 \ee
-Here $\tilde{U}$ is more than quadratic in the fields.  
+Here $U$ is more than quadratic in the fields.  
 The dilaton mass is undetermined and is not connected to the dimension of the corresponding operator, as discussed in \cite{Springer2010}.  
 It is related to the parameter $a_0$ by $a_0 = \thalf \left[ \mL2-8 \right]$. 
 The potential should be an even function of $\chi$. 
@@ -167,21 +172,21 @@ The equations of motion can be written as
 \label{C}
 \ee
 \be
-\tilde{U}=\thalf \rt6 z^2 \phiddot - \tthalf (z\phidot)^2 - 3 \rt6 z\phidot 
+U=\thalf \rt6 z^2 \phiddot - \tthalf (z\phidot)^2 - 3 \rt6 z\phidot 
 -4\sqrt{6}\phi - a_0\phi^2 +\tthalf\chi^2
 \label{U}
 \ee
 \be
- \frac{\partial \tilde{U}}{\partial \phi}=3z\phidot - 2a_0\phi
+ \frac{\partial U}{\partial \phi}=3z\phidot - 2a_0\phi
 \label{phi}
 \ee
 \be
- \frac{\partial \tilde{U}}{\partial \chi}
+ \frac{\partial U}{\partial \chi}
 =z^2\chiddot -3z\chidot \left(1+\frac{z\phidot}{\rt6} \right) + 3\chi
 \label{chi}
 \ee
 \be
- \frac{\partial \tilde{U}}{\partial G}=
+ \frac{\partial U}{\partial G}=
 z^2\Gddot -3z\Gdot \left(1+\frac{z\phidot}{\rt6} \right)
 \label{G}
 \ee
@@ -211,30 +216,30 @@ B = 6^{3/4} \sqrt{\lambda} \sin\theta,
 where $\theta$ now becomes the parameter controlling the axial-vector -- vector mass splitting.
 Inserting (\ref{Lz}) into (\ref{U}-\ref{G}) suggests the following terms in our ansatz for the potential
 \be
-\tilde{U} =  a_1 \phi \chi^2 + a_2 \phi G^2 + a_3 \chi^4 + a_4 G^4 + a_5 \chi^2 G^2 
+U =  a_1 \phi \chi^2 + a_2 \phi G^2 + a_3 \chi^4 + a_4 G^4 + a_5 \chi^2 G^2 
 + a_6 G^2 \tanh(g\phi).
 \ee
 We see that there must be a $G^2$ term in the IR limit, but this is forbidden in the weak-field limit because the glueball condensate field is massless. 
 To circumvent this, we propose the term $G^2 \tanh(g\phi)$ with $g>0$.  
 In the weak field limit this goes to $g\phi G^2$, which is acceptable.  
-The $\tanh$ is suggested by the conformal transformation between the frames, and it suggests a rapid exponential transition from the weak field to the strong field limits that is supported by phenomenology.
+The $\tanh$ is suggested by \ref{transform}, and it suggests a rapid exponential transition from the weak field to the strong field limits that is supported by phenomenology.
 By substitution one finds the following constraints on the parameters:
 \bd
-\tilde{U} \rightarrow 6 + a_0 + 6\rt6 \left( \cos^2 \theta \, a_1 + \sin^2 \theta \, a_2 \right)
+U \rightarrow 6 + a_0 + 6\rt6 \left( \cos^2 \theta \, a_1 + \sin^2 \theta \, a_2 \right)
 \ed
 \be
 + 6^3 \left( \cos^4 \theta \, a_3 + \sin^4 \theta \, a_4 + \cos^2 \theta \sin^2 \theta \, a_5 \right) = 0
 \ee
 \be
-\frac{\partial \tilde{U}}{\partial \chi} \rightarrow
+\frac{\partial U}{\partial \chi} \rightarrow
 2a_1 + 24\rt6 \cos^2\theta \, a_3 + 12\rt6 \sin^2\theta \, a_5 + \rt6 = 0
 \ee
 \be
-\frac{\partial \tilde{U}}{\partial G} \rightarrow
+\frac{\partial U}{\partial G} \rightarrow
 2a_2 + 24\rt6 \sin^2\theta \, a_4 + 12\rt6 \cos^2\theta \, a_5 + \rt6 = 0
 \ee
 \be
-\frac{\partial \tilde{U}}{\partial G} \rightarrow
+\frac{\partial U}{\partial G} \rightarrow
 a_6 = - \tthalf \label{LargeZ2}
 \ee
 We have chosen to exclude (\ref{phi}) because it is not independent. 
@@ -263,12 +268,12 @@ Substituting into (\ref{C}) and keeping only the lowest-order cross-term we find
 \ee
 From (\ref{U}) we find that
 \be
-\tilde{U} = -\tthalf (z\phidot)^2 - a_0\phi^2 +3 \frac{n^3 -13n +12}{(n+4)(n+3)} \Sigma_0 \Sigma_n z^{n+3}
+U = -\tthalf (z\phidot)^2 - a_0\phi^2 +3 \frac{n^3 -13n +12}{(n+4)(n+3)} \Sigma_0 \Sigma_n z^{n+3}
 \ee
 Since the $\phi^2$ terms start out as $z^{12}$, $z^{14}$, $z^{16}$, and so do the terms in the potential, the $n$ can only take the values 9, 11, etc.  
-This term contributes only to the equation for $\partial \tilde{U}/\partial \chi$.
+This term contributes only to the equation for $\partial U/\partial \chi$.
 \be
-\frac{\partial \tilde{U}}{\partial \chi} = -9\Sigma_0 \left( \frac{3}{14} \Sigma_0^2 + \frac{8}{27} G_0^2 z^2 \right) z^9 + (n-3)(n-1) \Sigma_n z^n
+\frac{\partial U}{\partial \chi} = -9\Sigma_0 \left( \frac{3}{14} \Sigma_0^2 + \frac{8}{27} G_0^2 z^2 \right) z^9 + (n-3)(n-1) \Sigma_n z^n
 \ee
 By power counting both $n=9$ and $n=11$ can contribute.  
 
@@ -277,17 +282,17 @@ This leads to the additional term in $\phi$
 \be
 \Delta \phi = \frac{8 m G_0 G_m}{\rt6 (m+5)(m+4)} z^{m+4}
 \ee
-It contributes to the equation for $\partial \tilde{U}/\partial G$ as
+It contributes to the equation for $\partial U/\partial G$ as
 \be
-\frac{\partial \tilde{U}}{\partial G} = -12G_0 \left( \frac{3}{14} \Sigma_0^2 + \frac{8}{27} G_0^2 z^2 \right) z^{10}
+\frac{\partial U}{\partial G} = -12G_0 \left( \frac{3}{14} \Sigma_0^2 + \frac{8}{27} G_0^2 z^2 \right) z^{10}
 + m (m-4) G_n z^m
 \ee
 The choice $m=8$ is not possible as there is no term of the same order to balance it.  
 Terms with $m=10$ and $m=12$ are possible.  
-These new terms cannot affect the equation for $\partial \tilde{U}/\partial \phi$  nor can they contribute to the equation for $\partial \tilde{U}/\partial \chi$.  
+These new terms cannot affect the equation for $\partial U/\partial \phi$  nor can they contribute to the equation for $\partial U/\partial \chi$.  
 Considering higher order terms in both $\chi$ and $G$ leads to
 \be
-\tilde{U} = -\tthalf (z\phidot)^2 - a_0\phi^2 +3 \frac{n^3 -13n +12}{(n+4)(n+3)} \Sigma_0 \Sigma_n z^{n+3}
+U = -\tthalf (z\phidot)^2 - a_0\phi^2 +3 \frac{n^3 -13n +12}{(n+4)(n+3)} \Sigma_0 \Sigma_n z^{n+3}
 + \frac{4m(m-4)}{m+4} G_0 G_m z^{m+4}
 \ee 
 
@@ -304,23 +309,23 @@ They also follow the spirit of the AdS/CFT correspondence in terms of the dimens
 
 Including now $m$ = 10 and 12, and $n$ = 9 and 11, we have the following set of equations in the small $z$ limit:
 \ba
-\tilde{U}_{\rm LHS} &=& 3 \Sigma_0^4 z^{12} \left[ 4 \frac{\Sigma_9}{\Sigma_0^3} - \frac{(54+a_0)}{2^3 \cdot 7^2} \right] \nonumber \\
+U_{\rm LHS} &=& 3 \Sigma_0^4 z^{12} \left[ 4 \frac{\Sigma_9}{\Sigma_0^3} - \frac{(54+a_0)}{2^3 \cdot 7^2} \right] \nonumber \\
 &+& \frac{1}{7} \Sigma_0^2 G_0^2 z^{14} \left[ 120 \frac{G_{10}}{\Sigma_0^2 G_0} + 120 \frac{\Sigma_{11}}{\Sigma_0 G_0^2} - \frac{(72+a_0)}{9} \right] \nonumber \\
 &+& 2G_0^4 z^{16} \left[ 12 \frac{G_{12}}{G_0^3} - \frac{(96+a_0)}{3^5} \right]
 \ea
 \ba
-\tilde{U}_{\rm RHS} &=& \Sigma_0^4 z^{12} \left[  \frac{\rt6}{28} a_1 + a_3\right] \nonumber \\
+U_{\rm RHS} &=& \Sigma_0^4 z^{12} \left[  \frac{\rt6}{28} a_1 + a_3\right] \nonumber \\
 &+& \Sigma_0^2 G_0^2 z^{14} \left[ \frac{\rt6}{27} a_1 + \frac{\rt6}{28} (a_2 + g a_6) + a_5 \right] \nonumber \\
 &+& G_0^4 z^{16} \left[ \frac{\rt6}{27} (a_2 + g a_6) + a_4 \right]
 \ea
 \ba
-\left(\frac{\partial \tilde{U}}{\partial \chi}\right)_{\rm LHS} &=& 3 \Sigma_0^3 z^9 \left[ -\frac{9}{14} + 16 \frac{\Sigma_9}{\Sigma_0^3} \right]+ 8 \Sigma_0 G_0^2 z^{11} \left[ - \frac{1}{3} + 10 \frac{\Sigma_{11}}{\Sigma_0 G_0^2} \right]\\
-\left(\frac{\partial \tilde{U}}{\partial \chi}\right)_{\rm RHS} &=& \Sigma_0^3 z^9 \left[ \frac{\rt6}{14} a_1 + 4 a_3  \right]+ \Sigma_0 G_0^2 z^{11} \left[  \frac{2\rt6}{27} a_1 + 2 a_5 \right]
+\left(\frac{\partial U}{\partial \chi}\right)_{\rm LHS} &=& 3 \Sigma_0^3 z^9 \left[ -\frac{9}{14} + 16 \frac{\Sigma_9}{\Sigma_0^3} \right]+ 8 \Sigma_0 G_0^2 z^{11} \left[ - \frac{1}{3} + 10 \frac{\Sigma_{11}}{\Sigma_0 G_0^2} \right]\\
+\left(\frac{\partial U}{\partial \chi}\right)_{\rm RHS} &=& \Sigma_0^3 z^9 \left[ \frac{\rt6}{14} a_1 + 4 a_3  \right]+ \Sigma_0 G_0^2 z^{11} \left[  \frac{2\rt6}{27} a_1 + 2 a_5 \right]
 \ea
 \ba
-\left(\frac{\partial \tilde{U}}{\partial G}\right)_{\rm LHS} &=& 6 \Sigma_0^2 G_0 z^{10} \left[ -\frac{3}{7} + 10 \frac{G_{10}}{\Sigma_0^2 G_0} \right]
+\left(\frac{\partial U}{\partial G}\right)_{\rm LHS} &=& 6 \Sigma_0^2 G_0 z^{10} \left[ -\frac{3}{7} + 10 \frac{G_{10}}{\Sigma_0^2 G_0} \right]
 + 32 G_0^3 z^{12} \left[ - \frac{1}{9} + 3 \frac{G_{12}}{G_0^3} \right] \\
-\left(\frac{\partial \tilde{U}}{\partial G}\right)_{\rm RHS} &=& \Sigma_0^2 G_0 z^{10} \left[ \frac{\rt6}{14} (a_2 + g a_6) + 2a_5 \right]
+\left(\frac{\partial U}{\partial G}\right)_{\rm RHS} &=& \Sigma_0^2 G_0 z^{10} \left[ \frac{\rt6}{14} (a_2 + g a_6) + 2a_5 \right]
 + G_0^3 z^{12} \left[ \frac{2\rt6}{27}  (a_2 + g a_6) + 4a_4 \right]
 \ea
 
@@ -343,9 +348,9 @@ That leaves $a_5$ as a free parameter, to be fit numerically, along with $g$, $\
 \section{Numerical Solution}
 
 Using the above potential, we seek a numerical solution that simultaneously satisfies the UV and IR limits. 
-We use equations (\ref{C}, \ref{chi}, \ref{G}), which allows for an additional term in the potential, $\Delta \tilde{U}$, such that 
+We use equations (\ref{C}, \ref{chi}, \ref{G}), which allows for an additional term in the potential, $\Delta U$, such that 
 \be
-\frac{\partial \Delta \tilde{U}}{\partial \chi} = \frac{\partial \Delta \tilde{U}}{\partial G} = 0,
+\frac{\partial \Delta U}{\partial \chi} = \frac{\partial \Delta U}{\partial G} = 0,
 \ee
 which will be determined from the numerical solution.
 
@@ -425,17 +430,17 @@ The background fields that are obtained from this analysis are shown in Figures 
 \end{table}
 
 
-We now analyze the ``extra" term in the potential, $\Delta \tilde{U}$. 
+We now analyze the ``extra" term in the potential, $\Delta U$. 
 We obtain this term numerically by subtracting the right-hand side of \ref{U} from its left-hand side.
 This term can be approximated numerically as a function of the dilaton field, 
 \be
-\Delta \tilde{U}\left(\phi\right) = \alpha \phi e^{-\left(\phi-b\right)^2/c } .
+\Delta U\left(\phi\right) = \alpha \phi e^{-\left(\phi-b\right)^2/c } .
 \ee
 The best-fit values for these parameters are shown in Table \ref{tabFit}.
 
 \begin{figure}[htb]
 \center{\includegraphics[width=300pt]{deltaU.eps}}
-\caption{\textit{Plot of the ``extra" term in the potential, $\Delta \tilde{U}(\phi)$.}}
+\caption{\textit{Plot of the ``extra" term in the potential, $\Delta U(\phi)$.}}
 \label{figdeltaU}
 \end{figure}
 
@@ -449,7 +454,7 @@ $b$ & 0.9219  \\ %plus/minus .0004
 $c$ & 0.6819\\ %plus/minus .0007
   \hline
 \end{tabular}
-\caption{The parameters for the fitting to $\Delta \tilde{U}$}
+\caption{The parameters for the fitting to $\Delta U$}
 \end{center}
 \end{table}
 
@@ -498,9 +503,9 @@ The scalar mesons are expected to mix with the scalar glueball field of this mod
 
 We discussed the construction of a potential for the background fields of a soft-wall AdS/QCD model. 
 We showed the limitation of a model that contains only the dilaton and chiral condensate fields, and suggested a solution by adding a glueball condensate to the model.
-We analytically constructed a general potential $\tilde{U}(\phi,\chi,G)$ that recovers the necessary asymptotic behavior of the background fields.
+We analytically constructed a general potential $U(\phi,\chi,G)$ that recovers the necessary asymptotic behavior of the background fields.
 Using this as a basis, we numerically constructed a potential that solves the selected background equations to within an accuracy of $10^-4$. 
-There is an additional allowed term in the  potential, $\Delta \tilde{U}(\phi)$ that does not affect the equations that were used in the numerical procedure. 
+There is an additional allowed term in the  potential, $\Delta U(\phi)$ that does not affect the equations that were used in the numerical procedure. 
 This term was found numerically, and fit as a function of the dilaton alone.
 These background fields can then be used to find the spectra of the light vector and axial-vector mesons.
 The model shows good phenomenological agreement with the experimental data for the meson spectra.
@@ -510,7 +515,7 @@ If a different set of the background equations is chosen, the extra term would b
 The parameterization in (\ref{param1}-\ref{param3}) could also be chosen differently, resulting in a different potential but making little difference to the resulting meson spectra.
 Finally, terms can be added that do not affect the equations of motion at all, i.e. terms such that 
 \be
-\Delta \tilde{U} = \Delta \frac{\partial \tilde{U}}{\partial \phi} = \Delta \frac{\partial \tilde{U}}{\partial \chi} = \Delta \frac{\partial \tilde{U}}{\partial G} =0.
+\Delta U = \Delta \frac{\partial U}{\partial \phi} = \Delta \frac{\partial U}{\partial \chi} = \Delta \frac{\partial U}{\partial G} =0.
 \ee
 
 This work demonstrates the construction of a potential for the background fields of a soft-wall AdS/QCD model that captures several key features of QCD observed through meson spectra.
