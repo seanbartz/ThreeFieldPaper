@@ -48,7 +48,7 @@
 \raggedbottom %for right-justified text, remove \raggedright
 
 \title{{\bf A Potential for a Three-Field AdS/QCD Model}}
-\author{Sean P. Bartz\footnote{E-mail: bartz@physics.umn.edu} {\small and} Joseph I. Kapusta\footnote{E-mail:kapusta@physics.umn.edu}}
+\author{Sean P. Bartz\footnote{E-mail: bartz@physics.umn.edu} \, {\small and}\, Joseph I. Kapusta\footnote{E-mail:kapusta@physics.umn.edu}}
 
 
 
@@ -87,7 +87,7 @@ These models use parametrizations for the background dilaton and chiral fields t
 A well-defined action would provide a set of background equations from which these fields can be derived, and may suggest how the model can be derived from a top-down approach. 
 In addition, this action provides access to the thermal properties of the model through perturbation of the geometry \cite{Herzog2007, Bayona2008, Gursoy2008b}.
 
-In this paper, we expand upon previous work to find a suitable potential for the background fields of a soft-wall AdS/QCD model. 
+In this paper, we expand upon previous work to find a suitable potential for the background fields of a soft-wall AdS/QCD model \cite{Batell2008, Springer2010, Gursoy2008a, Gursoy2008b, Csaki2007, Li2013, Li2013a, He2013}. 
 After demonstrating the limitations of models including a dilaton and chiral field alone, we suggest the inclusion of a background glueball field. 
 We then construct a potential that satisfies the necessary UV and IR limits, and use this potential to generate numerically the background fields and calculate the resulting meson spectra.
 
@@ -103,18 +103,18 @@ We assume that four-dimensional QCD can be modeled by the following five-dimensi
 where $\Phi$ is the dilaton and the metric is pure AdS, $g_{MN}=z^{-2}\eta_{MN},$ with the AdS curvature defined to be unity.
 The gravitational Lagrangian includes the dilaton and chiral condensate background fields
 \be
-\cL_{grav}=R+4\partial_\mu\Phi\partial^\mu\Phi - \thalf\partial_\mu\chi\partial^\mu\chi -V(\Phi,\chi).
+\cL_{grav}=R+4\partial_M\Phi\partial^M\Phi - \thalf\partial_M\chi\partial^M\chi -V(\Phi,\chi).
 \ee
 The scalar fields $\Phi,\chi$ are dimensionless. 
 
 It is easier to search for the background fields in the Einstein frame, where the gravitational action takes the canonical form
 \be
-\cS_E=\frac{1}{16\pi G_5} \int d^5x \sqrt{-\tilde{g}}\left(\tilde{R}-\thalf\partial_\mu\phi\partial^\mu\phi -\thalf\partial_\mu\chi\partial^\mu\chi - \tilde{V}(\phi,\chi)\right).
+\cS_E=\frac{1}{16\pi G_5} \int d^5x \sqrt{-\tilde{g}}\left(\tilde{R}-\thalf\partial_M\phi\partial^M\phi -\thalf\partial_M\chi\partial^M\chi - \tilde{V}(\phi,\chi)\right).
 \ee
 The tilde distinguishes the two frames, with $\tilde{V}=e^{4\Phi/3}V,$ and the dilaton is rescaled for a canonical action $\phi=\sqrt{8/3}\Phi$.
 The string and Einstein frame metrics are related by the conformal transformation
 \be
-g_{\mu\nu}=e^{2\phi/\sqrt{6}}\tilde{g}_{\mu\nu}.
+g_{MN}=e^{2\phi/\sqrt{6}}\tilde{g}_{MN}.
 \ee
 
 Previous work showed how to construct a potential for such a gravity-dilaton-chiral system, assuming that the fields have power-law behavior, which is accurate in both the UV and IR limits, \cite{Springer 2010}. 
@@ -130,7 +130,7 @@ Inserting this into (\ref{twofield}), we find that the chiral field behaves as
 \be
 \chi(z)=6^{3/4}\sqrt{\lambda}z,
 \ee
-which removes one of the independent parameters of the original GKK model. 
+which removes one of the independent parameters of the model in \cite{Gherghetta2009}. 
 Using the phenomenological value of $\lambda$, which determines the slope of the Regge trajectories, we find a mass splitting that is much too large.
 
 Because this problem arises in the equation that is independent of the potential, this issue cannot be resolved by the choice of potential in the two-field model. 
@@ -147,9 +147,10 @@ Finally, they do not determine an explicit form of the potential, which is the c
 
 \section{Setup}
 Consider the action in the Einstein frame for three fields: $\phi$, $\chi$ and $G$ representing the dilaton, a chiral field, and a glueball field with zero mass
-\be
-\cS_E=\frac{1}{16\pi G_5} \int d^5x \sqrt{-\tilde{g}}\left(\tilde{R}-\thalf\partial_\mu\phi\partial^\mu\phi -\thalf\partial_\mu\chi\partial^\mu\chi -\thalf\partial_\mu G\partial^\mu G - \tilde{V}(\phi,\chi,G)\right).
-\ee
+\ba
+\cS_E=\frac{1}{16\pi G_5} \int d^5x \sqrt{-\tilde{g}}\left(\tilde{R}-\thalf\partial_M\phi\partial^M\phi -\thalf\partial_M\chi\partial^M\chi \right. \\ \nonumber
+ \left. -\thalf\partial_M G\partial^M G - \tilde{V}(\phi,\chi,G)\right).
+\ea
 To simplify the equations of motion, we use a transformed potential, 
 \be
 V=e^{-2\phi/\rt6}\tilde{V}.
@@ -325,8 +326,8 @@ U_{\rm RHS} &=& \Sigma_0^4 z^{12} \left[  \frac{\rt6}{28} a_1 + a_3\right] \nonu
 \ba
 \left(\frac{\partial U}{\partial G}\right)_{\rm LHS} &=& 6 \Sigma_0^2 G_0 z^{10} \left[ -\frac{3}{7} + 10 \frac{G_{10}}{\Sigma_0^2 G_0} \right]
 + 32 G_0^3 z^{12} \left[ - \frac{1}{9} + 3 \frac{G_{12}}{G_0^3} \right] \\
-\left(\frac{\partial U}{\partial G}\right)_{\rm RHS} &=& \Sigma_0^2 G_0 z^{10} \left[ \frac{\rt6}{14} (a_2 + g a_6) + 2a_5 \right]
-+ G_0^3 z^{12} \left[ \frac{2\rt6}{27}  (a_2 + g a_6) + 4a_4 \right]
+\left(\frac{\partial U}{\partial G}\right)_{\rm RHS} &=& \Sigma_0^2 G_0 z^{10} \left[ \frac{\rt6}{14} (a_2 + g a_6) + 2a_5 \right] \\
+&+& G_0^3 z^{12} \left[ \frac{2\rt6}{27}  (a_2 + g a_6) + 4a_4 \right]
 \ea
 
 Altogether, from both the UV and IR limits, there are ten independent equations for the twelve parameters $a_0 - a_6$, $\Sigma_9$, $\Sigma_{11}$, $G_{10}$, $G_{12}$, and $g$.  
@@ -337,11 +338,15 @@ a_0 &=&  \frac{3}{2} \frac{1}{6 + \sin^2 \theta}\left[ 120 + 62 \sin^2 \theta + 
 a_1 &=&  -\frac{3\rt6}{4} \frac{1}{6 + \sin^2 \theta}\left[ 12 + 8 \sin^2 \theta + 9 \rt6 g \sin^2 \theta \right] \\
 a_2 &=&  -\frac{\rt6}{4} \frac{1}{6 + \sin^2 \theta}\left[ 32 + 24 \sin^2 \theta + 3 \rt6 g(9 \sin^2 \theta - 2) \right]
 \ea
-\ba
-2 a_3 \cos^2 \theta + a_5 \sin^2 \theta&=&\frac{1}{24} \frac{1}{6 + \sin^2 \theta}\left[ 24 + 22 \sin^2 \theta + 27 \rt6 g \sin^2 \theta \right] \\
-2 a_4 \sin^2 \theta + a_5 \cos^2 \theta&=&\frac{1}{24} \frac{1}{6 + \sin^2 \theta}\left[ 20 +22 \sin^2 \theta + 3 \rt6 g (9 \sin^2 \theta -2 ) \right]\\
-a_6&=&-\frac{3}{2}
-\ea
+\be
+2 a_3 \cos^2 \theta + a_5 \sin^2 \theta = \frac{1}{24} \frac{1}{6 + \sin^2 \theta}\left[ 24 + 22 \sin^2 \theta + 27 \rt6 g \sin^2 \theta \right] 
+\ee
+\be
+2 a_4 \sin^2 \theta + a_5 \cos^2 \theta = \frac{1}{24} \frac{1}{6 + \sin^2 \theta}\left[ 20 +22 \sin^2 \theta   +  3 \rt6 g (9 \sin^2 \theta -2) \right]
+\ee
+\be
+a_6 = -\frac{3}{2}
+\ee
 The coefficients $a_0$, $a_1$, $a_2$ and $a_6$ are determined, while there are two equations for the three coefficients $a_3$, $a_4$ and $a_5$.  
 That leaves $a_5$ as a free parameter, to be fit numerically, along with $g$, $\theta$, $G_0$, $\Sigma$, and $\lambda$.
 
@@ -350,7 +355,7 @@ That leaves $a_5$ as a free parameter, to be fit numerically, along with $g$, $\
 Using the above potential, we seek a numerical solution that simultaneously satisfies the UV and IR limits. 
 We use equations (\ref{C}, \ref{chi}, \ref{G}), which allows for an additional term in the potential, $\Delta U$, such that 
 \be
-\frac{\partial \Delta U}{\partial \chi} = \frac{\partial \Delta U}{\partial G} = 0,
+\frac{\partial }{\partial \chi} \Delta U = \frac{\partial }{\partial G}\Delta U = 0,
 \ee
 which will be determined from the numerical solution.
 
@@ -394,37 +399,45 @@ The parameters found are shown in Table \ref{tabParam}.
 
 \begin{figure}[htb]
 \center{\includegraphics[width=300pt]{dilaton.eps}}
-\caption{\textit{Log-log plot of the dilaton field $\Phi$. 
-The coordinate $x$ is a dimensionless re-scaling of the conformal coordinate, $x=\sqrt{\lambda}z$.}}
+\caption{A plot of the dilaton field $\Phi$ generated by the parameterization (\ref{param1}).
+The UV and IR asymptotic behavior is apparent, with a transition region between them.
+The coordinate $x$ is a dimensionless re-scaling of the conformal coordinate, $x=\sqrt{\lambda}z$.}
 \label{figDilaton}
 \end{figure}
 
 \begin{figure}[htb]
 \center{\includegraphics[width=300pt]{chiral.eps}}
-\caption{\textit{Log-log plot of the chiral field $\chi$. }}
+\caption{A plot of the chiral field $\chi$ generated by the parameterization (\ref{param2}). 
+The UV and IR asymptotic behavior is apparent, with a rapid transition between them.
+The coordinate $x$ is a dimensionless re-scaling of the conformal coordinate, $x=\sqrt{\lambda}z$.}
 \label{figChiral}
 \end{figure}
 
 \begin{figure}[htb]
 \center{\includegraphics[width=300pt]{glueball.eps}}
-\caption{\textit{Log-log plot of the glueball field $G$.}}
+\caption{A plot of the glueball field $G$ generated by the parameterization (\ref{param3}).
+The UV and IR asymptotic behavior is apparent, with a rapid transition between them.
+The coordinate $x$ is a dimensionless re-scaling of the conformal coordinate, $x=\sqrt{\lambda}z$.}
 \label{figGlueball}
 \end{figure}
 
-The background fields that are obtained from this analysis are shown in Figures \ref{figDilaton}-\ref{figGlueball}. The asymptotic power-law behavior of the fields is evident in the linear portions of the log-log scale plots shown. The "transition" behavior is most evident in the dilaton because of the large value of $\beta_1$, which controls the value of $z$ at which the field transitions from the UV limit to the IR limit. 
+The background fields that are obtained from this analysis are shown in Figures \ref{figDilaton}-\ref{figGlueball}. 
+The asymptotic power-law behavior of the fields is evident in the linear portions of the log-log scale plots shown.
+ The ``transition" behavior is most evident in the dilaton because of the large value of $\beta_1$, which controls the value of $z$ at which the field transitions from the UV limit to the IR limit. 
 
 \begin{table}[htb]
 \begin{center}
-\begin{tabular}{| l | c || c | r | }
+\begin{tabular}{| l | c || c | c | }
 \hline
-  $\lambda^{1/2}$ & $430$ MeV & $a_5$ & 1.18 \\
-  $\Sigma^{1/3}$ &  200 MeV & $\beta_1$ & 47.76\\
-  $G_0^{1/4}$ & 523 MeV &  $\beta_2$ & 0.80 \\
- $ \theta $& 1.47 & $\beta_3$ & 1.18 \\
+  $\lambda^{1/2}$ & $430$ MeV & $\beta_1$ & 20.5 GeV  \\
+  $\Sigma^{1/3}$ &  200 MeV & $\beta_2$ & 344 MeV \\
+  $G_0^{1/4}$ & 523 MeV & $\beta_3$ & 550 MeV \\
+ $ \theta $& 1.47 &  $a_5$ & 1.18 \\
   $g $& 1.0 & & \\
   \hline
 \end{tabular}
-\caption{Best fit parameters}
+\caption{Best fit parameters for the phenomenological model. 
+The parameters $\lambda, \theta,$ and $ \beta_2$ are chosen for the best visual fit to the $\rho$ and $a_1$ data, with the rest set by minimizing the error in the equations of motion (\ref{C}), (\ref{chi}-\ref{G}). }
 \label{tabParam}
 \end{center}
 \end{table}
@@ -435,12 +448,13 @@ We obtain this term numerically by subtracting the right-hand side of \ref{U} fr
 This term can be approximated numerically as a function of the dilaton field, 
 \be
 \Delta U\left(\phi\right) = \alpha \phi e^{-\left(\phi-b\right)^2/c } .
+\label{eqFit}
 \ee
 The best-fit values for these parameters are shown in Table \ref{tabFit}.
 
 \begin{figure}[htb]
 \center{\includegraphics[width=300pt]{deltaU.eps}}
-\caption{\textit{Plot of the ``extra" term in the potential, $\Delta U(\phi)$.}}
+\caption{Plot of the ``extra" term in the potential, $\Delta U(\phi)$. The solid line represents the numerical result, while the dashed line is the fitting of (\ref{eqFit}) using the parameters of Table \ref{tabFit}.}
 \label{figdeltaU}
 \end{figure}
 
@@ -449,23 +463,24 @@ The best-fit values for these parameters are shown in Table \ref{tabFit}.
 \label{tabFit}
 \begin{tabular}{| l | r | }
 \hline
-$\alpha$ & -77.07  \\ % plus/minus .03
-$b$ & 0.9219  \\ %plus/minus .0004
-$c$ & 0.6819\\ %plus/minus .0007
+$\alpha$ & -72.29  \\ % plus/minus .03
+$b$ & 0.8326  \\ %plus/minus .0004
+$c$ & 0.5673\\ %plus/minus .0007
   \hline
 \end{tabular}
-\caption{The parameters for the fitting to $\Delta U$}
+\caption{The dimensionless parameters for the fitting to $\Delta U$}
 \end{center}
 \end{table}
 
 \section{Meson Spectra}
 
-We use the GKK meson Lagrangian in the action (\ref{eqStringAction}),
+We use the following meson Lagrangian in the string frame action (\ref{eqStringAction}),
 \be
 \cL_{meson}=\left|DX\right|^2+m_X^2\left|X\right|^2 +\frac{1}{2g_5^2}\left(F_A^2 +F_V^2\right).
 \label{eqMesonL}
 \ee
-The covariant derivative is defined as $D_M = \partial_M+i[V_M,X]-i\{A_M,X\}$. The $2 \times 2$ scalar  field $X$ contains the scalar and pseudoscalar fields $(S,\pi)$, as well as a non-trivial vacuum expectation value, dual to the $q\bar{q}$ operator, which we have identified with the field $\chi(z)$.
+The covariant derivative is defined as $D_M = \partial_M+i[V_M,X]-i\{A_M,X\}$. 
+The $2 \times 2$ scalar  field $X$ contains the scalar and pseudoscalar fields $(S,\pi)$, as well as a non-trivial vacuum expectation value, dual to the $q\bar{q}$ operator, which we have identified with the field $\chi(z)$.
 The AdS/CFT dictionary sets the mass for the fields according to the dimension of the dual operator,
 \be
 m^2L^2=\Delta(\Delta-4).
@@ -479,23 +494,27 @@ The equation of motion in the axial gauge $\Psi_5=0$  is given by
 -\partial_z^2\Psi_n+\omega'\partial_z\Psi_n +M_\Psi^2(z) \Psi_n=m^2_{\Psi_n}\Psi_n,
 \ee
 where $\omega=\Phi(z)+log(z)$. 
-The $z$-dependent mass term coefficient $M_\Psi=0$  for the vector field, and $M_\Psi=g_5\chi/z$ for the axial field.
+The $z$-dependent mass term coefficient $M^2_V=0$  for the vector field, and 
+\be
+M^2_A=\frac{g_5^2L^2\chi^2}{z^2}
+\ee
+for the axial field.
 The equation can be put in the Schr{\"o}dinger form with the substitution $\Psi_n=e^{\omega/2}\psi_n$, resulting in
 \be
 -\partial^2_z\psi_n+\left(\oneqt \omega^{'2}-\thalf\omega^{''}+M_\psi^2\right)\psi_n=m^2_{\Psi_n}\psi_n.
 \ee
 These equations are analytically solvable in the IR limit, but full analysis requires the use of a numerical shooting method to find the mass eigenvalues.
-This model finds a better phenomenological fit than the results presented in the GKK paper, particularly for the ground state $\rho$ meson, as shown in Figure \ref{figRho}. 
+This model finds a better phenomenological fit than the results presented in \cite{Gherghetta2009}, particularly for the ground state $\rho$ meson, as shown in Figure \ref{figRho}. 
 The scalar mesons are expected to mix with the scalar glueball field of this model, and this analysis is not performed here. 
 
 \begin{figure}[htb]
 \center{\includegraphics[width=300pt]{axial.eps}}
-\caption{\textit{$a_1$ meson spectrum \cite{PDG}.}}
+\caption{Comparison of the predicted mass eigenvalues for the axial-vector sector with the experimental $a_1$ meson spectrum \cite{PDG}.}
 \end{figure}
 
 \begin{figure}[htb]
 \center{\includegraphics[width=300pt]{rho.eps}}
-\caption{\textit{$\rho$ meson spectrum \cite{PDG}.}}
+\caption{Comparison of the predicted mass eigenvalues for the vector sector with the experimental $\rho$ meson spectrum \cite{PDG}.}
 \label{figRho}
 \end{figure}
 
@@ -504,7 +523,7 @@ The scalar mesons are expected to mix with the scalar glueball field of this mod
 We discussed the construction of a potential for the background fields of a soft-wall AdS/QCD model. 
 We showed the limitation of a model that contains only the dilaton and chiral condensate fields, and suggested a solution by adding a glueball condensate to the model.
 We analytically constructed a general potential $U(\phi,\chi,G)$ that recovers the necessary asymptotic behavior of the background fields.
-Using this as a basis, we numerically constructed a potential that solves the selected background equations to within an accuracy of $10^-4$. 
+Using this as a basis, we numerically constructed a potential that solves the selected background equations to within an accuracy of $10^{-4}$. 
 There is an additional allowed term in the  potential, $\Delta U(\phi)$ that does not affect the equations that were used in the numerical procedure. 
 This term was found numerically, and fit as a function of the dilaton alone.
 These background fields can then be used to find the spectra of the light vector and axial-vector mesons.

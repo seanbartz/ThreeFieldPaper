@@ -53,13 +53,21 @@ C.~Bayona, H.~Boschi-Filho, N.~Braga, and L.~Zayas,
 U.~G\"{u}rsoy, E.~Kiritsis, L.~Mazzanti, and F.~Nitti,
 \newblock Physical Review Letters {\bf 101}, 181601 (2008), 0804.0899.
 
+\bibitem{Batell2008}
+B.~Batell and T.~Gherghetta,
+\newblock Physical Review D {\bf 78}, 026002+ (2008).
+
 \bibitem{Springer2010}
 J.~I. Kapusta and T.~Springer,
 \newblock Physical Review D {\bf 81}, 086009 (2010).
 
-\bibitem{Shifman-2008}
-M.~Shifman and A.~Vainshtein,
-\newblock Physical Review D {\bf 77}, 034002 (2008).
+\bibitem{Gursoy2008a}
+U.~G\"{u}rsoy, E.~Kiritsis, and F.~Nitti,
+\newblock Journal of High Energy Physics {\bf 2008}, 019 (2008), 0707.1349.
+
+\bibitem{Csaki2007}
+C.~Cs\'{a}ki and M.~Reece,
+\newblock Journal of High Energy Physics {\bf 2007}, 062 (2007), 0608266.
 
 \bibitem{Li2013}
 D.~Li and M.~Huang,
@@ -68,6 +76,18 @@ D.~Li and M.~Huang,
 \bibitem{Li2013a}
 D.~Li, M.~Huang, and Q.-S. Yan,
 \newblock The European Physical Journal C {\bf 73}, 2615 (2013), 1206.2824.
+
+\bibitem{He2013}
+S.~He, S.-Y. Wu, Y.~Yang, and P.-H. Yuan,
+\newblock p.~18 (2013), 1301.0385.
+
+\bibitem{Shifman-2008}
+M.~Shifman and A.~Vainshtein,
+\newblock Physical Review D {\bf 77}, 034002 (2008).
+
+\bibitem{Gherghetta2009}
+T.~Gherghetta, J.~Kapusta, and T.~Kelley,
+\newblock Physical Review D {\bf 79}, 076003 (2009), 0902.1998.
 
 \bibitem{PDG}
 J.~Beringer {\em et~al.},
