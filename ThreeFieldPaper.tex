@@ -1,18 +1,29 @@
-\documentclass[12pt]{article}
+%\documentclass[12pt]{article}
+\documentclass[aps,prd,12pt,nofootinbib]{revtex4}
 
-\usepackage{amsmath}
-\usepackage{cite}
+\usepackage{amsfonts}
+\usepackage{amsmath,epsfig,bm}
 \usepackage{graphicx}
-\usepackage{subfigure}
-\usepackage{times}
-\usepackage{multicol}
-\usepackage{fullpage}
+\usepackage{color}
+\newcommand\bom{\color{red}}  
+\newcommand\ms{\color{blue}}
+\newcommand\jk{\color{magenta}}
+\usepackage[setpagesize=false]{hyperref}
 
-\topmargin -.8cm
-\oddsidemargin  10.5pt
-\evensidemargin  10.5pt
-\textheight  612pt
-\textwidth  432pt
+\usepackage{tabularx}  %for table formatting 
+
+
+%\usepackage{cite}
+%\usepackage{subfigure}
+\usepackage{times}
+%\usepackage{multicol}
+%\usepackage{fullpage}
+
+%\topmargin -.8cm
+%\oddsidemargin  10.5pt
+%\evensidemargin  10.5pt
+%\textheight  612pt
+%\textwidth  432pt
 
 \newcommand{\be}{\begin{equation}}
 \newcommand{\ee}{\end{equation}}
@@ -47,9 +58,11 @@
 \renewcommand{\baselinestretch}{1.0}
 \raggedbottom %for right-justified text, remove \raggedright
 
-\title{{\bf A Potential for a Three-Field AdS/QCD Model}}
-\author{Sean P. Bartz\footnote{E-mail: bartz@physics.umn.edu} \, {\small and}\, Joseph I. Kapusta\footnote{E-mail:kapusta@physics.umn.edu}}
+\begin{document}
 
+\title{{\bf A Dynamical Three-Field AdS/QCD Model}}
+\author{Sean P. Bartz and Joseph I. Kapusta}
+\affiliation{School of Physics \& Astronomy, University of Minnesota, Minneapolis, MN 55455,USA}
 
 
 \vspace{.3cm}
@@ -57,17 +70,20 @@
 
 \parindent=20pt
 
-\begin{document}
 
-\maketitle
 
-\abstract{The Anti-de Sitter Space/Conformal Field Theory (AdS/CFT) correspondence may offer new and useful insights into the non-perturbative regime of strongly coupled gauge theories such as Quantum Chromodynamics (QCD). 
+
+\begin{abstract}
+The Anti-de Sitter Space/Conformal Field Theory (AdS/CFT) correspondence may offer new and useful insights into the non-perturbative regime of strongly coupled gauge theories such as Quantum Chromodynamics (QCD). 
 We present an AdS/CFT-inspired model that describes the spectra of light mesons. 
 The conformal symmetry is broken by a background dilaton field, and chiral symmetry breaking and linear confinement are described by a chiral condensate field. 
 These background fields, along with a background glueball condensate field, are derived from a potential. 
 We describe the construction of the potential, and the calculation of the meson spectra, which match experimental data well. 
 We also argue that the presence of the third background field is necessary to properly describe the meson spectra. 
-The outlook for application of this model to finite temperature systems is also discussed. }
+The outlook for application of this model to finite temperature systems is also discussed.
+\end{abstract}
+
+\maketitle
 \vfill
 
 \section{Introduction}
@@ -92,7 +108,8 @@ After demonstrating the limitations of models including a dilaton and chiral fie
 We then construct a potential that satisfies the necessary UV and IR limits, and use this potential to generate numerically the background fields and calculate the resulting meson spectra.
 
 
-\section{Review and Motivation}\label{secReview}
+\section{Review and Motivation}
+\label{secReview}
 
 We assume that four-dimensional QCD can be modeled by the following five-dimensional action, written in the string frame:
 \be
@@ -129,7 +146,7 @@ Inserting this into (\ref{twofield}), we find that the chiral field behaves as
 \be
 \chi(z)=6^{3/4}\sqrt{\lambda}z,
 \ee
-which removes one of the independent parameters of the model in \cite{Gherghetta2009}. 
+which removes one of the independent parameters of the model in \cite{gherghetta-kelley}. 
 Using the phenomenological value of $\lambda$, which determines the slope of the Regge trajectories, we find a mass splitting that is much too large.
 
 Because this problem arises in the equation that is independent of the potential, this issue cannot be resolved by the choice of potential in the two-field model. 
@@ -145,6 +162,7 @@ Finally, they do not determine an explicit form of the potential, which is the c
 
 
 \section{Setup}
+
 Consider the action in the Einstein frame for three fields: $\phi$, $\chi$ and $G$ representing the dilaton, a chiral field, and a glueball field with zero mass
 \ba
 \cS_E=\frac{1}{16\pi G_5} \int d^5x \sqrt{-\tilde{g}}\left(\tilde{R}-\thalf\partial_M\phi\partial^M\phi -\thalf\partial_M\chi\partial^M\chi \right. \\ \nonumber
@@ -193,6 +211,7 @@ z^2\Gddot -3z\Gdot \left(1+\frac{z\phidot}{\rt6} \right)
 We assume that the potential has no explicit dependence on the coordinate $z$,  so the equations \ref{phi}-\ref{G} are not independent, and we can eliminate one. 
 
 \subsection{IR Limit}
+
 The requirement of linear confinement requires a solution in the large $z$ limit of the  form
 \ba
 \phi &=& \lambda z^2 \\
@@ -246,6 +265,7 @@ We have chosen to exclude (\ref{phi}) because it is not independent.
 The parameter $a_6$ is determined, and the others will be determined by an examination of the UV limit.
 
 \subsection{UV Limit}
+
 Next we look for a solution in the small $z$ limit. 
 The AdS/CFT dictionary dictates that the leading-order UV behavior of the chiral and glueball condensate fields is determined by their dimension. 
 Note also that we are working in the chiral limit where the quark mass is zero. 
@@ -397,7 +417,7 @@ For each set of these parameters, the other parameters are set by a routine that
 The parameters found are shown in Table \ref{tabParam}.
 
 \begin{figure}[htb]
-\center{\includegraphics[width=300pt]{dilaton.eps}}
+\center{\includegraphics[width=300pt]{dilaton.pdf}}
 \caption{A plot of the dilaton field $\Phi$ generated by the parameterization (\ref{param1}).
 The UV and IR asymptotic behavior is apparent.
 The coordinate $x$ is a dimensionless re-scaling of the conformal coordinate, $x=\sqrt{\lambda}z$.}
@@ -405,7 +425,7 @@ The coordinate $x$ is a dimensionless re-scaling of the conformal coordinate, $x
 \end{figure}
 
 \begin{figure}[htb]
-\center{\includegraphics[width=300pt]{chiral.eps}}
+\center{\includegraphics[width=300pt]{chiral.pdf}}
 \caption{A plot of the chiral field $\chi$ generated by the parameterization (\ref{param2}). 
 The UV and IR asymptotic behavior is apparent, with a rapid transition between them.
 The coordinate $x$ is a dimensionless re-scaling of the conformal coordinate, $x=\sqrt{\lambda}z$.}
@@ -413,7 +433,7 @@ The coordinate $x$ is a dimensionless re-scaling of the conformal coordinate, $x
 \end{figure}
 
 \begin{figure}[htb]
-\center{\includegraphics[width=300pt]{glueball.eps}}
+\center{\includegraphics[width=300pt]{glueball.pdf}}
 \caption{A plot of the glueball field $G$ generated by the parameterization (\ref{param3}).
 The UV and IR asymptotic behavior is apparent, with a rapid transition between them.
 The coordinate $x$ is a dimensionless re-scaling of the conformal coordinate, $x=\sqrt{\lambda}z$.}
@@ -452,7 +472,7 @@ This term can be approximated numerically as a function of the dilaton field,
 The best-fit values for these parameters are shown in Table \ref{tabFit}.
 
 \begin{figure}[htb]
-\center{\includegraphics[width=300pt]{deltaU.eps}}
+\center{\includegraphics[width=300pt]{deltaU.pdf}}
 \caption{Plot of the ``extra" term in the potential, $\Delta U(\phi)$. The solid line represents the numerical result, while the dashed line is the fitting of (\ref{eqFit}) using the parameters of Table \ref{tabFit}.}
 \label{figdeltaU}
 \end{figure}
@@ -506,11 +526,11 @@ The equation can be put in the Schr{\"o}dinger form with the substitution $\Psi_
 -\partial^2_z\psi_n+\left(\oneqt \omega^{'2}-\thalf\omega^{''}+M_\psi^2\right)\psi_n=m^2_{\Psi_n}\psi_n.
 \ee
 These equations are analytically solvable in the IR limit, but full analysis requires the use of a numerical shooting method to find the mass eigenvalues.
-This model finds a better phenomenological fit than the results presented in \cite{Gherghetta2009}, particularly for the ground state $\rho$ meson, as shown in Figure \ref{figRho}. 
+This model finds a better phenomenological fit than the results presented in \cite{gherghetta-kelley}, particularly for the ground state $\rho$ meson, as shown in Figure \ref{figRho}. 
 The scalar mesons are expected to mix with the scalar glueball field of this model, and this analysis is not performed here. 
 
 \begin{figure}[htb]
-\center{\includegraphics[width=300pt]{axial.eps}}
+\center{\includegraphics[width=300pt]{axial.pdf}}
 \caption{Comparison of the predicted mass eigenvalues for the axial-vector sector with the experimental $a_1$ meson spectrum \cite{PDG}.}
 \end{figure}
 
@@ -532,7 +552,7 @@ n & $a_1$ experimental (MeV) & $a_1$ model \\
 \end{table}
 
 \begin{figure}[htb]
-\center{\includegraphics[width=300pt]{rho.eps}}
+\center{\includegraphics[width=300pt]{rho.pdf}}
 \caption{Comparison of the predicted mass eigenvalues for the vector sector with the experimental $\rho$ meson spectrum \cite{PDG}.}
 \label{figRho}
 \end{figure}
@@ -585,14 +605,57 @@ This potential also opens the possibility of exploring the thermal properties of
 
 
 \section*{Acknowledgments}
-SB thanks Tony Gherghetta and Aleksey Cherman for useful discussions.
-This research is supported in part by the Department of Energy Office of Science Graduate Fellowship Program (DOE SCGF), made possible in part by  the American Recovery and Reinvestment Act of 2009, administered by ORISE-ORAU under contract no. DE-AC05-06OR23100.
+SB thanks Tony Gherghetta and Aleksey Cherman for useful discussions.  
+This research is supported by the Department of Energy Office of Science Graduate Fellowship Program (DOE SCGF), made possible in part by the American Recovery and Reinvestment Act of 2009, administered by ORISE-ORAU under contract no. DE-AC05-06OR23100, by the US Department of Energy (DOE) under Grant No. DE-FG02-87ER40328, and by a Doctoral Dissertation Fellowship from the University of Minnesota.
 
 \vfill
 
-\bibliographystyle{phys-rev}
-\bibliography{ThreeField}
+\begin{thebibliography}{99}
 
+\bibitem{maldacena} J. M. Maldacena, Int. J. Theor. Phys. {\bf 38}, 1113 (1999).
 
+\bibitem{Gubser1998} S. Gubser, I. Klebanov, and A. Polyakov, Phys. Lett. B {\bf 428}, 105 (1998).
+
+\bibitem{Witten:1998} E. Witten, Adv. Theor. Math. Phys. {\bf 2}, 253 (1998).
+
+\bibitem{stephanov-katz-son} J. Erlich, E. Katz, D. T. Son, and M. A. Stephanov, Phys. Rev. Lett. {\bf 95}, 261602 (2005).
+
+\bibitem{DaRold2005} L. Da Rold and A. Pomarol, Nucl. Phys. {\bf B721}, 79 (2005).
+
+\bibitem{karch-katz-son-adsqcd} A. Karch, E. Katz, D. Son, and M. Stephanov, Phys. Rev. D {\bf 74}, 015005 (2006).
+
+\bibitem{gherghetta-kelley} T. Gherghetta, J. I. Kapusta, and T. M. Kelley, Phys. Rev. D {\bf 79}, 076003 (2009).
+
+\bibitem{bartz-pions} T. M. Kelley, S. P. Bartz, and J. I. Kapusta, Phys. Rev. D {\bf 83}, 016002 (2011).
+
+\bibitem{Colangelo2008} P. Colangelo, F. De Fazio, F. Giannuzzi, F. Jugeau, and S. Nicotri, Phys. Rev. D {\bf 78}, 055009 (2008).
+
+\bibitem{Cui2013} L.-X. Cui, Z. Fang, and Y.-L. Wu, arXiv:1310.6487v1 (unpublished).
+
+\bibitem{Herzog2007} C. Herzog, Phys. Rev. Lett. {\bf 98}, 091601 (2007).
+
+\bibitem{Bayona2008} C. Bayona, H. Boschi-Filho, N. Braga, and L. Zayas, Phys. Rev. D {\bf 77}, 046002 (2008).
+
+\bibitem{Gursoy2008b} U. G¨ursoy, E. Kiritsis, L. Mazzanti, and F. Nitti, Phys. Rev. Lett. {\bf 101}, 181601 (2008).
+
+\bibitem{Batell2008} B. Batell and T. Gherghetta, Phys. Rev. D {\bf 78}, 026002 (2008).
+
+\bibitem{Springer2010} J. I. Kapusta and T. Springer, Phys. Rev. D {\bf 81}, 086009 (2010).
+
+\bibitem{Gursoy2008a} U. G¨ursoy, E. Kiritsis, and F. Nitti, J. High Energy Phys. 02 (2008) 019.
+
+\bibitem{Csaki2007} C. Cs´aki and M. Reece, J. High Energy Phys. 05 (2007) 062.
+
+\bibitem{Li2013} D. Li and M. Huang, J. High Energy Phys. 11 (2013) 088.
+
+\bibitem{Li2013a} D. Li, M. Huang, and Q.-S. Yan, Eur. Phys. J. C {\bf 73}, 2615 (2013).
+
+\bibitem{He2013} S. He, S.-Y. Wu, Y. Yang, and P.-H. Yuan, arXiv:1301.0385v1 (unpublished).
+
+\bibitem{Shifman-2008} M. Shifman and A. Vainshtein, Phys. Rev. D {\bf 77}, 034002 (2008).
+
+\bibitem{PDG} J. Beringer et al. (Particle Data Group), Phys. Rev. D {\bf 86}, 010001 (2012).
+
+\end{thebibliography}
 
 \end{document}
