@@ -86,10 +86,11 @@ The outlook for application of this model to finite temperature systems is also 
 \maketitle
 \vfill
 
+%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
 The Anti-de Sitter Space/Conformal Field Theory (AdS/CFT) correspondence is a useful mathematical tool for the analysis of strongly-coupled gauge theories.
-This correspondence correspondence establishes a connection between an $n$-dimensional Super-Yang Mills Theory and a weakly-coupled gravitational theory in $n+1$ dimensions \cite{maldacena, Gubser1998, Witten:1998}. 
+This correspondence establishes a connection between an $n$-dimensional Super-Yang Mills Theory and a weakly-coupled gravitational theory in $n+1$ dimensions \cite{maldacena, Gubser1998, Witten:1998}. 
 Calculations that are analytically intractable in the field theory can be related to results from the gravity theory using an effective dictionary developed over the past decade. 
 Quantum chromodynamics (QCD) is a strongly-coupled gauge theory at hadronic scales, making it a candidate for the application of the gauge/gravity correspondence.
 It is not known whether a gravitational dual to QCD exists, but there has been much work on models that capture its key features.
@@ -107,25 +108,35 @@ In this paper, we expand upon previous work to find a suitable potential for the
 After demonstrating the limitations of models including a dilaton and chiral field alone, we suggest the inclusion of a background glueball field. 
 We then construct a potential that satisfies the necessary UV and IR limits, and use this potential to generate numerically the background fields and calculate the resulting meson spectra.
 
-
+%%%%%%%%%%%%%%%%%%%%%
 \section{Review and Motivation}
 \label{secReview}
 
 We assume that four-dimensional QCD can be modeled by the following five-dimensional action, written in the string frame:
 \be
-\cS =\frac{1}{16\pi G_5} \int d^5x \sqrt{-g} e^{-2\Phi}  \left[ \cL_{grav} + \cL_{meson} \right], 
+\cS =\frac{1}{16\pi G_5} \int d^5x \sqrt{-g} e^{-2\Phi}  \left(R+4\partial_M\Phi\partial^M\Phi - \mathrm{Tr} \left[ |DX|^2  +\partial_M \mathcal{G} \partial^M \mathcal{G} + \frac{1}{2g_5^2} (F_A^2+F_V^2) +V_m(\Phi,X^2, \mathcal{G}) \right]\right), 
 \label{eqStringAction}
 \ee
 where $\Phi$ is the dilaton and the metric is pure AdS, $g_{MN}=z^{-2}\eta_{MN},$ with the AdS curvature defined to be unity.
-The gravitational Lagrangian includes the dilaton and chiral condensate background fields
+The constant $g_5^2 = 12\pi^2/N_c$, where $N_c$ is the number of colors.
+The covariant derivative is defined as $D_M = \partial_M+i[V_M,X]-i\{A_M,X\}$.
+The scalar field, $X$, which is dual to the $\bar{q}q$ operator, obtains a $z$-dependent vacuum expectation value (VEV):
 \be
-\cL_{grav}=R+4\partial_M\Phi\partial^M\Phi - \thalf\partial_M\chi\partial^M\chi -V(\Phi,\chi).
+\langle X \rangle=\frac{\chi(z)}{2}I,
 \ee
-The scalar fields $\Phi,\chi$ are dimensionless. 
-
-It is easier to search for the background fields in the Einstein frame, where the gravitational action takes the canonical form
+where $I$ is the $2 \times 2$ identity matrix.
+The glueball field $\mathcal{G}$ similarly obtains a $z$-dependent VEV, $G(z)$.
+We examine the background dynamics of the fields
 \be
-\cS_E=\frac{1}{16\pi G_5} \int d^5x \sqrt{-\tilde{g}}\left(\tilde{R}-\thalf\partial_M\phi\partial^M\phi -\thalf\partial_M\chi\partial^M\chi - \tilde{V}(\phi,\chi)\right).
+\cS =\frac{1}{16\pi G_5} \int d^5x \sqrt{-g} e^{-2\Phi}  \left(R+4\partial_M\Phi\partial^M\Phi -\thalf\partial_M \chi \partial^M \chi -\thalf\partial_M G \partial^M G -V(\Phi,\chi,G) \right),
+\ee
+where $V=\mathrm{Tr}[V_m]$.
+The scalar fields $\Phi,\chi,G$ are dimensionless. 
+
+It is easier to search for the background fields in the Einstein frame, where the vacuum action takes the canonical form
+\be
+\cS_E=\frac{1}{16\pi G_5} \int d^5x \sqrt{-\tilde{g}}\left(\tilde{R}-\thalf\partial_M\phi\partial^M\phi -\thalf\partial_M\chi\partial^M\chi -\thalf\partial_M G \partial^M G - \tilde{V}(\phi,\chi)\right).
+\label{eq:Einstein}
 \ee
 The tilde distinguishes the two frames, with $\tilde{V}=e^{4\Phi/3}V,$ and the dilaton is rescaled for a canonical action $\phi=\sqrt{8/3}\Phi$.
 The string and Einstein frame metrics are related by the conformal transformation
@@ -133,7 +144,8 @@ The string and Einstein frame metrics are related by the conformal transformatio
 g_{MN}=e^{2\phi/\sqrt{6}}\tilde{g}_{MN}.
 \ee
 
-Previous work showed how to construct a potential for such a gravity-dilaton-chiral system, assuming that the fields have power-law behavior, which is accurate in both the UV and IR limits, \cite{Springer 2010}. 
+Previous work showed how to construct a potential for a gravity-dilaton-chiral system without the glueball condensate. 
+We examine the behavior assuming that the fields have power-law behavior, which is accurate in both the UV and IR limits, \cite{Springer2010}. 
 One of the equations of motion is independent of the choice of potential,
 \be
 \chidot^2  = \frac{\rt6}{z^2} \Dz(z^2\phidot). 
@@ -149,25 +161,22 @@ Inserting this into (\ref{twofield}), we find that the chiral field behaves as
 which removes one of the independent parameters of the model in \cite{gherghetta-kelley}. 
 Using the phenomenological value of $\lambda$, which determines the slope of the Regge trajectories, we find a mass splitting that is much too large.
 
-Because this problem arises in the equation that is independent of the potential, this issue cannot be resolved by the choice of potential in the two-field model. 
+Because this problem arises in the equation that is independent of the potential, this issue cannot be resolved by the choice of potential in models that do not consider the glueball condensate. 
 Models that derive the field behavior using the superpotential method suffer from the same problem.
 
-To resolve this problem, we suggest to add an additional scalar field to the model, $G$, representing the glueball condensate. 
+To resolve this problem, we consider the effects of the glueball condensate $G$ on the background equations. 
 This field must be linear in the IR for linear confinement, and go as $G \sim z^4$ in the UV to match the operator dimension in the AdS/CFT dictionary.
 
 It is noted that the model proposed by Huang and Li \cite{Li2013, Li2013a} accurately models the non-restoration of chiral symmetry using a model with only two background fields, but their model differs from the work presented here in several respects.
-They allow the metric to be solved dynamically based upon the chosen parametrization for the background fields, while we maintain a metric that is strictly AdS.
-The IR behavior of the chiral field in their model is set by examining the quark potential, and approaches a constant value, as opposed to the linear behavior described above.
+They place the meson fields and chiral dynamics in the open-string sector of the model. 
+For linear confinement, this requires that the chiral field approach a constant in the IR, which necessitates a modified metric to obtain the correct chiral dynamics.
+Our model allows the metric to remain purely AdS in the string frame.
 Finally, they do not determine an explicit form of the potential, which is the central goal of this work.
 
+%%%%%%%%%%%%%%%%%%%%%
+\section{Construction of Potential}
 
-\section{Setup}
-
-Consider the action in the Einstein frame for three fields: $\phi$, $\chi$ and $G$ representing the dilaton, a chiral field, and a glueball field with zero mass
-\ba
-\cS_E=\frac{1}{16\pi G_5} \int d^5x \sqrt{-\tilde{g}}\left(\tilde{R}-\thalf\partial_M\phi\partial^M\phi -\thalf\partial_M\chi\partial^M\chi \right. \\ \nonumber
- \left. -\thalf\partial_M G\partial^M G - \tilde{V}(\phi,\chi,G)\right).
-\ea
+Consider the action in the Einstein frame (\ref{eq:Einstein}).
 To simplify the equations of motion, we use a transformed potential, 
 \be
 V=e^{-2\phi/\rt6}\tilde{V}.
@@ -176,10 +185,15 @@ V=e^{-2\phi/\rt6}\tilde{V}.
 It is noted that this is simply the potential in the string frame.
 We re-write the potential as
 \be
-V = -12 + 4\sqrt{6}\phi + a_0\phi^2 -\tthalf\chi^2 + U.
+V = -12 + 4\sqrt{6}\phi + a_0\phi^2 +\frac{m_X^2}{2}\chi^2 + U.
 \label{V}
 \ee
-Here $U$ is more than quadratic in the fields.  
+Here $U$ is more than quadratic in the fields. 
+ The AdS/CFT dictionary sets the mass for the fields according to the dimension of the dual operator,
+\be
+m^2L^2=\Delta(\Delta-4).
+\ee
+The dimension of the $q\bar{q}$ operator is 3, so $m_X^2 = -3/L^2$.
 The dilaton mass is undetermined and is not connected to the dimension of the corresponding operator, as discussed in \cite{Springer2010}.  
 It is related to the parameter $a_0$ by $a_0 = \thalf \left[ \mL2-8 \right]$. 
 The potential should be an even function of $\chi$. 
@@ -210,6 +224,7 @@ z^2\Gddot -3z\Gdot \left(1+\frac{z\phidot}{\rt6} \right)
 \ee
 We assume that the potential has no explicit dependence on the coordinate $z$,  so the equations \ref{phi}-\ref{G} are not independent, and we can eliminate one. 
 
+%%%%%%%%%%%%%%%%%%%%%
 \subsection{IR Limit}
 
 The requirement of linear confinement requires a solution in the large $z$ limit of the  form
@@ -264,6 +279,7 @@ a_6 = - \tthalf \label{LargeZ2}
 We have chosen to exclude (\ref{phi}) because it is not independent. 
 The parameter $a_6$ is determined, and the others will be determined by an examination of the UV limit.
 
+%%%%%%%%%%%%%%%%%%%%%
 \subsection{UV Limit}
 
 Next we look for a solution in the small $z$ limit. 
@@ -369,6 +385,7 @@ a_6 = -\frac{3}{2}
 The coefficients $a_0$, $a_1$, $a_2$ and $a_6$ are determined, while there are two equations for the three coefficients $a_3$, $a_4$ and $a_5$.  
 That leaves $a_5$ as a free parameter, to be fit numerically, along with $g$, $\theta$, $G_0$, $\Sigma$, and $\lambda$.
 
+%%%%%%%%%%%%%%%%%%%%%
 \section{Numerical Solution}
 
 Using the above potential, we seek a numerical solution that simultaneously satisfies the UV and IR limits. 
@@ -494,20 +511,15 @@ $\delta_2$ & 0.4952 $\pm $ $9.24 \times 10^{-2} $\\
 \end{center}
 \end{table}
 
+%%%%%%%%%%%%%%%%%%%%%
 \section{Meson Spectra}
 
-We use the following meson Lagrangian in the string frame action (\ref{eqStringAction}),
+To calculate the spectra of the radial excitations of the mesons, we examine the relevant terms from the string frame action (\ref{eqStringAction}),
 \be
-\cL_{meson}=\left|DX\right|^2+m_X^2\left|X\right|^2 +\frac{1}{2g_5^2}\left(F_A^2 +F_V^2\right).
+\cS_{meson}=-\frac{1}{16\pi G_5} \int d^5x \sqrt{-g} e^{-2\Phi}\mathrm{Tr}\left[ \left|DX\right|^2+V_m(\Phi,X^2,\mathcal{G})+\frac{1}{2g_5^2}\left(F_A^2 +F_V^2\right) \right].
 \label{eqMesonL}
 \ee
-The covariant derivative is defined as $D_M = \partial_M+i[V_M,X]-i\{A_M,X\}$. 
-The $2 \times 2$ scalar  field $X$ contains the scalar and pseudoscalar fields $(S,\pi)$, as well as a non-trivial vacuum expectation value, dual to the $q\bar{q}$ operator, which we have identified with the field $\chi(z)$.
-The AdS/CFT dictionary sets the mass for the fields according to the dimension of the dual operator,
-\be
-m^2L^2=\Delta(\Delta-4).
-\ee
-The dimension of the $q\bar{q}$ operator is 3, so $m_X^2 = -3/L^2$.
+The $2 \times 2$ scalar  field $X$ contains the scalar and pseudoscalar fields $(S,\pi)$, as well as the VEV.
 
 We find the equations of motion for the various meson fields by varying the meson action.
 For the vector and axial-vector fields, we  assume that the Kaluza-Klein modes are separable from the 4D parts of the fields.
@@ -576,6 +588,94 @@ n & $\rho$ experimental (MeV) & $\rho$ model \\
 \label{tabRho}
 \end{table}
 
+\section{Pseudoscalar Sector}
+
+When using the exponential representation for the scalar field, the terms from the potential do not contribute to the equations of motion for the pion field.
+This can be easily seen by noting that $|X_e|^n$ does not contain any terms involving the $\pi_e$ field when $n$ is even. 
+We have required the potential to be an even function of $X$, so there are no such terms.
+This would seem to suggest that we use the exponential representation to calculate the pion mass spectrum.
+However, as noted in \cite{bartz-pions}, $\pi_e$ is extremely sensitive to boundary conditions, and the numerical results are not reliable.
+For this reason, we seek to work with an equation of motion written in the linear representation.
+
+For convenience, we begin by deriving the equations of motion in the exponential representation.
+Working in the axial gauge $A_z = 0$, we rewrite the axial meson field in terms of its perpendicular and longitudinal components: $A_\mu = A_{\mu\perp} +\partial_\mu \varphi$.
+Only the longitudinal component of the axial field, $\varphi$, contributes to the pion equations of motion.
+We use (\ref{eqMesonL}), keeping only the relevant terms
+\ba
+\cL = e^{-2\Phi} \sqrt{-g} [ \chi^2 (\partial_\mu \pi_e \partial^\mu \pi_e +  \partial_\mu \varphi \partial^\mu \varphi - 2 \partial_\mu \pi \partial^\mu \varphi +  \partial_z \pi_e \partial^z \pi_e)  \\ \nonumber
+ + \frac{1}{g_5^2}\partial_z \partial_\mu \varphi \partial^z\partial^\mu \varphi ].
+\ea
+
+Varying with respect to $\varphi$ yields
+\be
+e^{2\Phi} \partial_z \left(\frac{e^{-2\Phi}}{z}\partial_z \varphi \right) + \frac{g_5^2 \chi^2}{z^3}(\pi_e-\varphi)=0,
+\ee
+while varying $\pi_e$ gives
+\be
+\frac{e^{2\Phi} z^3}{\chi^2}\partial_z \left(\frac{e^{-2\Phi}\chi^2}{z^3} \partial_z \pi_e \right) +m_n^2(\pi_e-\varphi) = 0.
+\ee
+
+It was shown in \cite{bartz-pions} that the equations of motion are equivalent under the substitution $\pi_e \rightarrow \pi_l/\chi(z)$, so we make the appropriate substitution and expand the equations:
+\be
+- \varphi'' + \left(2\Phi'+\frac{1}{z}\right)\varphi' = \frac{g_5^2 \chi}{z^2}(\chi \varphi -\pi_l)
+\ee
+\be 
+-\pi_l'' + \left(2\Phi'+\frac{3}{z}\right)\pi_l' + \left(\chi''-2\chi' \Phi' - \frac{3 \chi'}{z}\right)\frac{\pi_l}{\chi} = m_n^2 (\pi_l - \chi \varphi).
+\ee
+We can put these equations into Sch{\"o}dinger-like form with the following substitutions
+\ba
+\varphi & = & e^{\omega/2}\varphi_n \\
+\pi_l & = & e^{\omega_s/2} \pi_n, 
+\ea
+with $\omega =2 \Phi + \log(z)$ and $\omega_s = 2 \Phi + 3\log(z)$.
+This yields 
+\be
+-\varphi_n''+\left(\oneqt \omega'^2-\thalf \omega" +\frac{g_5^2 \chi^2}{z^2}\right)\varphi_n = \frac{g_5^2 \chi}{z} \pi_n
+\ee
+\be
+-\pi_n''+\left(\oneqt \omega_s'^2-\thalf \omega_s" +\frac{\chi''}{\chi}-\frac{2\chi' \Phi'}{\chi} - \frac{3 \chi'}{z\chi}-m_n^2 \right) \pi_n = -m_n^2 \frac{\chi}{z}\varphi_n.
+\label{eqPiEOM2}
+\ee
+
+The dependence of these equations of motion on the scalar potential can be made explicit by using the background equation for the chiral field, written here in the string frame
+\be
+z^2\chi'' -3z\chi' \left(1+\frac{z\Phi'}{\rt6} \right) = m_X^2\chi +\frac{\partial U}{\partial \chi}.
+\ee
+Substituting, we can re-write (\ref{eqPiEOM2}) as
+\be
+-\pi_n''+\left(\oneqt \omega_s'^2-\thalf \omega_s" +\frac{m_X^2}{z^2}+\frac{1}{z^2} \frac{\partial U}{\partial \chi} -m_n^2 \right) \pi_n = -m_n^2 \frac{\chi}{z}\varphi_n
+\ee
+
+\begin{figure}[htb]
+\center{\includegraphics[width=300pt]{pion.pdf}}
+\caption{Comparison of the predicted mass eigenvalues for the scalar sector with the experimental $\pi$ meson spectrum.}
+\label{figPion}
+\end{figure}
+
+\begin{table}[htb]
+\label{tabPion}
+\begin{center}
+\begin{tabular}{| c || c | c  |}
+\hline
+n & $\pi$ experimental (MeV) & $\pi$ model \\
+\hline
+1 & 140 &				0 \\
+2 & 1300 $\pm$ 100 & 	1208 \\
+3 & 1816 $\pm$ 14&		1837 \\
+4 & 2070 $\pm$ 35* & 	2046 \\ 
+5 & 2360 $\pm$ 25* &	2233	\\
+6 & -- & 				2402 \\
+7 & -- & 				2557 \\
+\hline
+\end{tabular}
+\caption{The experimental and predicted values for the masses of the pseudoscalar mesons.
+*Appears only in the further states of the PDG.}
+\end{center}
+
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
 
 We discussed the construction of a potential for the background fields of a soft-wall AdS/QCD model. 
@@ -600,12 +700,13 @@ The radially excited states of the light mesons have linear Regge trajectories.
 Chiral symmetry is not restored for highly-excited mesons, as seen in the constant mass-splitting of the vector and axial-vector mesons.
 
 Future improvements to this model will include incorporating the quark mass by adding a linear term to the UV limit of the chiral condensate field.
-The pseudo scalar and scalar $f_0$ meson spectrum should be explored, which will require analyzing how the equations of motion mix with the scalar potential.
+The scalar mesons and glueballs will mix, and this analysis is left for future work.
 This potential also opens the possibility of exploring the thermal properties of a model that has the correct chiral symmetry breaking behavior.
 
 
 \section*{Acknowledgments}
 SB thanks Tony Gherghetta and Aleksey Cherman for useful discussions.  
+SB also acknowledges Tom Kelley for the development of the code for calculating the pseudoscalar spectrum.
 This research is supported by the Department of Energy Office of Science Graduate Fellowship Program (DOE SCGF), made possible in part by the American Recovery and Reinvestment Act of 2009, administered by ORISE-ORAU under contract no. DE-AC05-06OR23100, by the US Department of Energy (DOE) under Grant No. DE-FG02-87ER40328, and by a Doctoral Dissertation Fellowship from the University of Minnesota.
 
 \vfill
