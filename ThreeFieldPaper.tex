@@ -80,7 +80,7 @@ The conformal symmetry is broken by a background dilaton field, and chiral symme
 These background fields, along with a background glueball condensate field, are derived from a potential. 
 We describe the construction of the potential, and the calculation of the meson spectra, which match experimental data well. 
 We argue that the presence of the third background field is necessary to properly describe the meson spectra. 
-The outlook for application of this model to finite temperature systems is also discussed.
+%The outlook for application of this model to finite temperature systems is also discussed.
 \end{abstract}
 
 \maketitle
@@ -136,7 +136,7 @@ The scalar fields $\Phi,\chi,G$ are dimensionless.
 
 It is easier to search for the background fields in the Einstein frame, where the vacuum action takes the canonical form
 \be
-\cS_E=\frac{1}{16\pi G_5} \int d^5x \sqrt{-\tilde{g}}\left(\tilde{R}-\thalf\partial_M\phi\partial^M\phi -\thalf\partial_M\chi\partial^M\chi -\thalf\partial_M G \partial^M G - \tilde{V}(\phi,\chi)\right) \, .
+\cS_E=\frac{1}{16\pi G_5} \int d^5x \sqrt{-\tilde{g}}\left(\tilde{R}-\thalf\partial_M\phi\partial^M\phi -\thalf\partial_M\chi\partial^M\chi -\thalf\partial_M G \partial^M G - \tilde{V}(\phi,\chi,G)\right) \, .
 \label{eq:Einstein}
 \ee
 The tilde distinguishes the two frames, with $\tilde{V}=e^{4\Phi/3}V,$ and the dilaton is rescaled for a canonical action $\phi=\sqrt{8/3}\Phi$.
@@ -499,20 +499,20 @@ We now analyze the ``extra" term in the potential, $\Delta U$.
 We obtain this term numerically by subtracting the right-hand side of \ref{U} from its left-hand side.
 This term can be approximated numerically as a function of the dilaton field, 
 \be
-\Delta U\left(\Phi\right) = \alpha_1 \Phi^2 e^{-\left(\Phi-\gamma_1\right)^2/\delta_1 } +   \alpha_2 \Phi^2 e^{-\left(\Phi-\gamma_2\right)^2/\delta_2 } \, .
+\Delta U\left(\phi\right) = \alpha_1 \phi^2 e^{-\left(\phi-\gamma_1\right)^2/\delta_1 } +   \alpha_2 \phi^2 e^{-\left(\phi-\gamma_2\right)^2/\delta_2 } \, .
 \label{eqFit}
 \ee
 The best-fit values for these parameters are shown in Table \ref{deltaUfit}.  The $\Delta U$ as a function of $\phi$ is shown in Figure \ref{figdeltaU}.
 \begin{table}[htb]
 \begin{center}
-\begin{tabular}{| l | r | }
+\begin{tabular}{| l | r || l | r | }
 \hline
-$\alpha_1$ & $-3.043 \times 10^1$\\
-$\gamma_1$ & 7.086 $\times 10^{-5}$ \\ 
-$\delta_1$ & 9.699 $ \times 10^{-5}$\\ 
-$\alpha_2$ & 2.671 $ \times 10^{-4}$  \\
-$\gamma_2$ & 2.213 $ \times 10^{-2}$ \\
-$\delta_2$ & 1.471 $ \times 10^{-2} $\\
+$\alpha_1$ & $-3.043 \times 10^1$ & $\alpha_2$ & 2.671 $ \times 10^{-4}$ \\
+$\gamma_1$ & 7.086 $\times 10^{-5}$ & $\gamma_2$ & 2.213 $ \times 10^{-2}$ \\ 
+$\delta_1$ & 9.699 $ \times 10^{-5}$& $\delta_2$ & 1.471 $ \times 10^{-2} $\\ 
+%$\alpha_2$ & 2.671 $ \times 10^{-4}$  \\
+%$\gamma_2$ & 2.213 $ \times 10^{-2}$ \\
+%$\delta_2$ & 1.471 $ \times 10^{-2} $\\
   \hline
 \end{tabular}
 \caption{The dimensionless parameters for the fitting to $\Delta U$.}
@@ -530,6 +530,11 @@ To calculate the spectra of the radial excitations of the mesons, we examine the
 \label{eqMesonL}
 \ee
 The $2 \times 2$ field $X$ contains the scalar and pseudoscalar fields $(S,\pi)$, as well as the VEV.
+We will use the exponential representation for the scalar field discussed in \cite{bartz-pions},
+\be
+X_e = \left( S(x,z)+\frac{\chi(z)}{2}\right)I \, e^{2i\pi^a_e(x,z)t^a},
+\ee
+where $I$ is the $2\times2$ identity matrix.
 
 We find the equations of motion for the various meson fields by varying the meson action.
 For the vector and axial-vector fields, we  assume that the Kaluza-Klein modes are separable from the 4D parts of the fields.
@@ -780,5 +785,7 @@ This research is supported by the Department of Energy Office of Science Graduat
 \bibitem{PDG} J. Beringer et al. (Particle Data Group), Phys. Rev. D {\bf 86}, 010001 (2012).
 
 \end{thebibliography}
+
+%  ø\_(?)_/ø  %
 
 \end{document}
