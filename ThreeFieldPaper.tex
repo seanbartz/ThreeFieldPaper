@@ -152,16 +152,23 @@ One of the equations of motion is independent of the choice of potential,
 \chidot^2  = \frac{\rt6}{z^2} \Dz(z^2\phidot) \, . 
 \label{twofield}
 \ee
+Here, the dot represents differentiation with respect to the $z$ coordinate.
 To obtain linear confinement, the dilaton should have quadratic behavior in the IR limit, $\phi(z)=\lambda z^2$.
 The chiral field should have linear behavior in the IR, $\chi(z)=A z$, where $A$ sets the mass splitting between the axial-vector and vector mesons for large radial quantum numbers $n$. 
 This constant mass-splitting at large $n$ occurs because of the non-restoration of chiral symmetry \cite{Shifman-2008}.
-Inserting this into (\ref{twofield}), we find that the chiral field behaves as
+Inserting this IR behavior for the dilaton and chiral field into (\ref{twofield}), we find that the chiral field behaves as
 \be
-\chi(z)=6^{3/4}\sqrt{\lambda}z \, ,
+\chi(z\rightarrow \infty)=6^{3/4}\sqrt{\lambda}z \, ,
 \ee
-which removes one of the independent parameters of the model in \cite{gherghetta-kelley}. 
-Using the phenomenological value of $\lambda$, which determines the slope of the radial Regge trajectories, we find a mass splitting that is much too large.
-Because this problem arises in the equation that is independent of the potential, this issue cannot be resolved by the choice of potential in models that do not consider the glueball condensate. 
+linking the IR behavior of the chiral condensate with the parameter that determines the radial Regge trajectories.
+However, the IR behavior of the chiral field determines the constant mass splitting between the axial vector and vector mesons for large radial quantum numbers $n$ \cite{gherghetta-kelley},
+\be
+\Delta m^2 \equiv \left(m_{A_n}^2-m_{V_n}^2\right)_{n\rightarrow \infty} = \frac{g_5^2}{z^2} \chi^2(z\rightarrow \infty) = g_5^2 6^{3/2} \lambda \, .
+\label{eq:massgap}
+\ee
+Thus, there is no independent parameter in the model that controls this mass splitting.
+Using the value of $\lambda = 0.1831/2$ GeV$^2$ found in the analysis \cite{gherghetta-kelley} (our definition of $\lambda$ differs from theirs by a factor of 2), we find a value for $\Delta m^2 = 53 $ GeV$^2$, which is much larger than the experimental value of 1.42 GeV$^2$.
+Because this problem arises in the equation that is independent of the potential, it cannot be resolved by the choice of potential in models that do not consider the glueball condensate. 
 Models that derive the field behavior using the superpotential method suffer from the same problem.
 
 To resolve this problem, we consider the effects of the glueball condensate $G$ on the background equations. 
@@ -256,7 +263,7 @@ U =  a_1 \phi \chi^2 + a_2 \phi G^2 + a_3 \chi^4 + a_4 G^4 + a_5 \chi^2 G^2
 We see that there must be a $G^2$ term in the IR limit, but this is forbidden in the weak-field limit because the glueball condensate field is massless. 
 To circumvent this, we propose the term $G^2 \tanh(g\phi)$ with $g>0$.  
 In the weak field limit this goes to $g\phi G^2$, which is acceptable.  
-The $\tanh$ is suggested by \ref{transform}, and it provides a rapid exponential transition from the weak field to the strong field limits that is supported by phenomenology.
+The $\tanh$ is suggested by (\ref{transform}), and it provides a rapid exponential transition from the weak field to the strong field limits that is supported by phenomenology.
 By substitution one finds the following constraints on the parameters:
 \bd
 U \rightarrow 6 + a_0 + 6\rt6 \left( \cos^2 \theta \, a_1 + \sin^2 \theta \, a_2 \right)
@@ -416,12 +423,18 @@ As an alternative to direct solution, we parameterize the fields as follows:
 Here $f(z)$ is some function that transitions smoothly from 1 at small values of $z$ to 0 at large $z$, while $\psi(z)_{xy}$ represents the known UV and IR limits of the fields $\phi, \chi,$ and $G$. 
 The switching functions need not be the same for each field. We choose 
 \ba
-f_\phi(z)&=&e^{-(\beta_1z)^{10}} \, , \\ \label{param1}
-f_\chi(z)&=&e^{-(\beta_2z)^4} \, , \\  \label{param2}
+f_\phi(z)&=&e^{-(\beta_1z)^{10}} \, , \label{param1}\\
+f_\chi(z)&=&e^{-(\beta_2z)^4} \, ,   \label{param2}\\
 f_G(z)&=&e^{-(\beta_3z)^5} \, . \label{param3}
 \ea
 The powers of the exponential are chosen to be greater than the known power-law behavior of the fields in the UV limit so as to not interfere with this behavior. 
 The $\beta_i$ will be determined by numerical fitting.
+The switching functions are not unique, but do allow for an accurate solution to the differential equations, as explained below.
+
+The potential $U$, because it is a function of the background fields, will change depending upon the behavior of the fields.
+In particular, the additional $\Delta U$ term is numerically determined such that (\ref{U}-\ref{phi}) are solved by the background fields.
+A numerical nonlinear optimization routine, namely the interior point algorithm \cite{interior}, is used to select the parameters that minimize the error in the finite-difference approximations to equations ($\ref{C}), (\ref{chi}),$ and ($\ref{G}$), thus ensuring that the parameterized fields are solutions to the background fields, within numerical tolerances.
+In this analysis, the fields $\phi$, $\chi$, and $G$ solve the equations (\ref{C}-\ref{G}) to an accuracy of one part in $10^4$. 
 
 The chiral condensate $\Sigma$ is set using the Gell-Mann--Oakes--Renner relation:
 \be
@@ -430,16 +443,18 @@ The chiral condensate $\Sigma$ is set using the Gell-Mann--Oakes--Renner relatio
 Using $m_\pi = 139.6$ MeV, $f_\pi = 92 $ MeV, and $m_u+m_d = 7.0 $ MeV yields a value of $\Sigma = (286\, \mathrm{MeV})^3$.
 
 In all, we have eight parameters to be determined numerically. 
-The first constraint is to obtain the best global visual fit to the vector and axial-vector meson spectra.   
+In addition to obtaining solutions that solve the background equations, we also wish to achieve the best possible global visual fit to the vector and axial-vector meson spectra.   
 We do not simply do a chi-squared fitting to the experimental data because the measurement error for the ground state $\rho$ meson is so much smaller than for the others that this would effectively act as the only constraint. 
-Second, we seek to minimize the error in the finite-difference approximations to equations $\ref{C}, \ref{chi},$ and $\ref{G}$.  
-This is done to an accuracy of one part in $10^4$. 
 
 Three of the parameters are most phenomenologically relevant: $\lambda,$ which controls the slope of the meson spectra in the large-$n$ limit; $\theta,$ which controls the mass splitting between the $a_1$ and $\rho$ mesons at large $n$, and $\beta_2$, which controls the location of the ``bend" in the $a_1$ spectrum.
 For each set of these parameters, the other parameters are determined by a routine that minimizes the error in the equations of motion. 
 The parameters found are shown in Table \ref{tabParam}.
 
-\begin{table}[htb]
+The background fields that are obtained from this analysis are shown in Figures \ref{figDilaton}-\ref{figGlueball}. 
+The asymptotic power-law behavior of the fields is evident in the linear portions of the log-log scale plots shown.
+ The ``transition" behavior is most evident in the dilaton because of the large value of $\beta_1$, which controls the value of $z$ at which the field transitions from the UV limit to the IR limit. 
+ 
+ \begin{table}[tb]
 \begin{center}
 \begin{tabular}{| l | c || c | c | }
 \hline
@@ -455,9 +470,31 @@ The parameters $\lambda, \theta,$ and $ \beta_2$ are chosen for the best visual 
 \end{center}
 \end{table}
 
-The background fields that are obtained from this analysis are shown in Figures \ref{figDilaton}-\ref{figGlueball}. 
-The asymptotic power-law behavior of the fields is evident in the linear portions of the log-log scale plots shown.
- The ``transition" behavior is most evident in the dilaton because of the large value of $\beta_1$, which controls the value of $z$ at which the field transitions from the UV limit to the IR limit. 
+We now analyze the ``extra" term in the potential, $\Delta U$. 
+We obtain this term numerically by subtracting the right-hand side of \ref{U} from its left-hand side.
+This term can be approximated numerically as a function of the dilaton field, 
+\be
+\Delta U\left(\phi\right) = \alpha_1 \phi^2 e^{-\left(\phi-\gamma_1\right)^2/\delta_1 } +   \alpha_2 \phi^2 e^{-\left(\phi-\gamma_2\right)^2/\delta_2 } \, .
+\label{eqFit}
+\ee
+The best-fit values for these parameters are shown in Table \ref{deltaUfit}.  The $\Delta U$ as a function of $\phi$ is shown in Figure \ref{figdeltaU}.
+\begin{table}[htb]
+\begin{center}
+\begin{tabular}{| l | r || l | r | }
+\hline
+$\alpha_1$ & $-3.043 \times 10^1$ & $\alpha_2$ & 2.671 $ \times 10^{-4}$ \\
+$\gamma_1$ & 7.086 $\times 10^{-5}$ & $\gamma_2$ & 2.213 $ \times 10^{-2}$ \\ 
+$\delta_1$ & 9.699 $ \times 10^{-5}$& $\delta_2$ & 1.471 $ \times 10^{-2} $\\ 
+%$\alpha_2$ & 2.671 $ \times 10^{-4}$  \\
+%$\gamma_2$ & 2.213 $ \times 10^{-2}$ \\
+%$\delta_2$ & 1.471 $ \times 10^{-2} $\\
+  \hline
+\end{tabular}
+\caption{The dimensionless parameters for the fitting to $\Delta U$.}
+\label{deltaUfit}
+\end{center}
+\end{table}
+
 
 \clearpage
 
@@ -495,30 +532,6 @@ The coordinate $x$ is a dimensionless re-scaling of the conformal coordinate, $x
 
 \clearpage
 
-We now analyze the ``extra" term in the potential, $\Delta U$. 
-We obtain this term numerically by subtracting the right-hand side of \ref{U} from its left-hand side.
-This term can be approximated numerically as a function of the dilaton field, 
-\be
-\Delta U\left(\phi\right) = \alpha_1 \phi^2 e^{-\left(\phi-\gamma_1\right)^2/\delta_1 } +   \alpha_2 \phi^2 e^{-\left(\phi-\gamma_2\right)^2/\delta_2 } \, .
-\label{eqFit}
-\ee
-The best-fit values for these parameters are shown in Table \ref{deltaUfit}.  The $\Delta U$ as a function of $\phi$ is shown in Figure \ref{figdeltaU}.
-\begin{table}[htb]
-\begin{center}
-\begin{tabular}{| l | r || l | r | }
-\hline
-$\alpha_1$ & $-3.043 \times 10^1$ & $\alpha_2$ & 2.671 $ \times 10^{-4}$ \\
-$\gamma_1$ & 7.086 $\times 10^{-5}$ & $\gamma_2$ & 2.213 $ \times 10^{-2}$ \\ 
-$\delta_1$ & 9.699 $ \times 10^{-5}$& $\delta_2$ & 1.471 $ \times 10^{-2} $\\ 
-%$\alpha_2$ & 2.671 $ \times 10^{-4}$  \\
-%$\gamma_2$ & 2.213 $ \times 10^{-2}$ \\
-%$\delta_2$ & 1.471 $ \times 10^{-2} $\\
-  \hline
-\end{tabular}
-\caption{The dimensionless parameters for the fitting to $\Delta U$.}
-\label{deltaUfit}
-\end{center}
-\end{table}
 
 
 %%%%%%%%%%%%%%%%%%%%%
@@ -552,9 +565,13 @@ The equation can be put in the Schr{\"o}dinger form with the substitution $\Psi_
 \be
 -\partial^2_z\psi_n+\left(\oneqt \omega^{'2}-\thalf\omega^{''}+M_\psi^2\right)\psi_n=m^2_{\Psi_n}\psi_n \, .
 \ee
-These equations are analytically solvable in the IR limit, but full analysis requires the use of a numerical shooting method to find the mass eigenvalues.
+These equations are analytically solvable in the IR limit\footnotemark, but full analysis requires the use of a numerical shooting method to find the mass eigenvalues.
 This model finds a better phenomenological fit than the results presented in \cite{gherghetta-kelley}, particularly for the ground state $\rho$ meson, as shown in Figure \ref{figRho}. 
 The scalar mesons are expected to mix with the scalar glueball field of this model; that analysis is deferred to a future publication. 
+\footnotetext{The analytical solution gives a large-$n$ spectrum with a slope of 8$\lambda$, differing from the slope of 4$\lambda$ found in other AdS/QCD models.
+This difference arises because of the $\exp(-2\Phi)$ pre-factor in the action (\ref{eqStringAction}) compared to the pre-factor of $\exp(-\Phi)$ used in other models \cite{karch-katz-son-adsqcd, gherghetta-kelley}. 
+This factor of two is compensated by the numerical value of $\lambda$ shown in Table \ref{tabParam}, which is half the value used in other models.
+Thus, the notational choice does not affect the resulting meson spectra.}
 
 \begin{figure}[htb]
 \center{\includegraphics[width=300pt]{axial.eps}}
@@ -563,11 +580,12 @@ The scalar mesons are expected to mix with the scalar glueball field of this mod
 \nopagebreak
 \begin{figure}[htb]
 \center{\includegraphics[width=300pt]{rho.eps}}
-\caption{Comparison of the predicted mass eigenvalues for the vector sector with the experimental $\rho$ meson spectrum \cite{PDG}.}
+\caption{Comparison of the predicted mass eigenvalues for the vector sector with the experimental $\rho$ meson spectrum.
+The included resonances are based upon the review \cite{Bugg} with the $n=2$ resonance as suggested by \cite{Bertin}}
 \label{figRho}
 \end{figure}
 
-\clearpage
+%\clearpage
 
 \begin{table}[htb]
 \center
@@ -601,7 +619,8 @@ n & $\rho$ experimental (MeV) & $\rho$ model \\
 7 &  2265 $\pm$  40& 2276 \\ 
 \hline
 \end{tabular}
-\caption{The experimental \cite{PDG} and predicted values for the masses of the vector mesons.}
+\caption{The experimental and predicted values for the masses of the vector mesons.
+The included resonances are based upon the review \cite{Bugg} with the $n=2$ resonance as suggested by \cite{Bertin}}
 \label{tabRho}
 \end{table}
 
@@ -754,6 +773,8 @@ This research is supported by the Department of Energy Office of Science Graduat
 
 \bibitem{gherghetta-kelley} T. Gherghetta, J. I. Kapusta, and T. M. Kelley, Phys. Rev. D {\bf 79}, 076003 (2009).
 
+\bibitem{interior} R. Byrd, J. Gilbert, J. Nocedal, Mathematical Programming {\bf 89}, 149 (2000).
+
 \bibitem{bartz-pions} T. M. Kelley, S. P. Bartz, and J. I. Kapusta, Phys. Rev. D {\bf 83}, 016002 (2011).
 
 \bibitem{Colangelo2008} P. Colangelo, F. De Fazio, F. Giannuzzi, F. Jugeau, and S. Nicotri, Phys. Rev. D {\bf 78}, 055009 (2008).
@@ -782,10 +803,14 @@ This research is supported by the Department of Energy Office of Science Graduat
 
 \bibitem{Shifman-2008} M. Shifman and A. Vainshtein, Phys. Rev. D {\bf 77}, 034002 (2008).
 
-\bibitem{PDG} J. Beringer et al. (Particle Data Group), Phys. Rev. D {\bf 86}, 010001 (2012).
+\bibitem{Bugg} D. Bugg, Physics Reports {\bf 397}, 257 (2004).
+
+\bibitem{Bertin} A. Bertin \emph{et al.} [OBELIX Colaboration], Phys. Lett. B {\bf 414}, 220 (1997).
+
+\bibitem{PDG} J. Beringer {\emph et al.} (Particle Data Group), Phys. Rev. D {\bf 86}, 010001 (2012).
 
 \end{thebibliography}
 
-%  ø\_(?)_/ø  %
+%  ï¿½\_(?)_/ï¿½  %
 
 \end{document}
